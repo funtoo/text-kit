@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install postinst postrm setup
+DEPEND=>=app-i18n/canna-3.6_p3-r1
+DESCRIPTION=Japanese dictionary as a supplement/replacement to Canna3.5b2
+EAPI=0
+HOMEPAGE=http://cannadic.oucrc.org/
+KEYWORDS=x86 alpha sparc ppc ppc64 ~amd64
+LICENSE=GPL-2
+RDEPEND=>=app-i18n/canna-3.6_p3-r1
+SLOT=0
+SRC_URI=http://cannadic.oucrc.org/cannadic-0.95c.tar.gz
+_eclasses_=cannadic	a60869e5823b1040630e89ede36797bf
+_md5_=94271ed92affeafcb5959fa27c2ee1f8
