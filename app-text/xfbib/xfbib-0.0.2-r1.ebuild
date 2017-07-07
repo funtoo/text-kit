@@ -1,12 +1,13 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 inherit xfconf
 
 DESCRIPTION="a lightweight BibTeX editor"
-HOMEPAGE="https://goodies.xfce.org/projects/applications/xfbib"
-SRC_URI="https://goodies.xfce.org/releases/${PN}/${P}.tar.bz2"
+HOMEPAGE="http://goodies.xfce.org/projects/applications/xfbib"
+SRC_URI="http://goodies.xfce.org/releases/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"

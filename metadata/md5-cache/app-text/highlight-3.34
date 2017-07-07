@@ -1,6 +1,6 @@
 DEFINED_PHASES=compile configure install prepare unpack
 DEPEND=dev-lang/lua:0= qt4? ( dev-qt/qtgui:4 dev-qt/qtcore:4 ) dev-libs/boost virtual/pkgconfig
-DESCRIPTION=Converts source code to formatted text (HTML, LaTeX, etc.) with syntax highlight
+DESCRIPTION=converts source code to formatted text ((X)HTML, RTF, (La)TeX, XSL-FO, XML) with syntax highlight
 EAPI=5
 HOMEPAGE=http://www.andre-simon.de/
 IUSE=examples qt4
@@ -9,5 +9,5 @@ LICENSE=GPL-3
 RDEPEND=dev-lang/lua:0= qt4? ( dev-qt/qtgui:4 dev-qt/qtcore:4 )
 SLOT=0
 SRC_URI=http://www.andre-simon.de/zip/highlight-3.34.tar.bz2
-_eclasses_=base	df2aa567b3f0595aae0d0923889f7631	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	flag-o-matic	61cad4fb5d800b29d484b27cb033f59b	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	qmake-utils	990448b067cb3cfe1443bc25fb57239c	qt4-r2	b7985a3197fbc3a22d059f19904e735b	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=4d63a63fbd75aafa600522c67cec1ffb
+_eclasses_=base	3fe4f8980633fd7bc69e9887209ba2fe	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	flag-o-matic	7366202dd55cb8f018f5d450d54e7749	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	qmake-utils	0a242e7177789b0028b4045f336dd4db	qt4-r2	d6c113024bb3086a1facc65cd338930e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_md5_=400c15f7aae603d82206e030df0c6261

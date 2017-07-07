@@ -1,5 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 inherit eutils
 
@@ -17,7 +18,7 @@ S=${WORKDIR}/htmlinc
 
 src_unpack() {
 	unpack ${A}
-	epatch "${FILESDIR}"/htmlinc-gcc3-gentoo.patch
+	epatch ${FILESDIR}/htmlinc-gcc3-gentoo.patch
 }
 
 src_compile() {

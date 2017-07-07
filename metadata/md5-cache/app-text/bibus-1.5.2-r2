@@ -1,6 +1,6 @@
 DEFINED_PHASES=compile install postinst postrm prepare setup
 DEPEND=python_targets_python2_7? ( >=dev-lang/python-2.7.5-r2:2.7[sqlite] ) >=dev-lang/python-exec-2:=[python_targets_python2_7(-)?,-python_single_target_python2_7(-)] app-office/libreoffice dev-python/wxpython:2.8[python_targets_python2_7(-)?,-python_single_target_python2_7(-)] dev-db/sqliteodbc dev-db/unixODBC mysql? ( dev-python/mysql-python[python_targets_python2_7(-)?,-python_single_target_python2_7(-)] dev-db/myodbc )
-DESCRIPTION=Bibliographic and reference management software, integrates with LO and MS Word
+DESCRIPTION=Bibliographic and reference management software, integrates with L/OO.o and MS Word
 EAPI=5
 HOMEPAGE=http://bibus-biblio.sourceforge.net/
 IUSE=mysql python_targets_python2_7
@@ -10,5 +10,5 @@ RDEPEND=python_targets_python2_7? ( >=dev-lang/python-2.7.5-r2:2.7[sqlite] ) >=d
 REQUIRED_USE=|| ( python_targets_python2_7 )
 SLOT=0
 SRC_URI=mirror://sourceforge/bibus-biblio/bibus_1.5.2.orig.tar.gz https://dev.gentoo.org/~jlec/distfiles/bibus-1.5.2-lo-4.patch.xz
-_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	fdo-mime	21ef5adf81836863efa968f2a25cff64	ltprune	2770eed66a9b8ef944714cd0e968182e	multibuild	72647e255187a1fadc81097b3657e5c3	multilib	97f470f374f2e94ccab04a2fb21d811e	python-r1	e9350ec46bb5c9f3504b4fbe8b8d8987	python-utils-r1	c9de01becf9df3f8c10aeec3dc693f5d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	versionator	c80ccf29e90adea7c5cae94b42eb76d0
-_md5_=5778f5520412084caaf860a223e67c10
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	fdo-mime	92d07846ea8ea54172f8c0112a47ae3d	ltprune	2770eed66a9b8ef944714cd0e968182e	multibuild	742139c87a9fa3766f0c2b155e5522bf	multilib	97f470f374f2e94ccab04a2fb21d811e	python-r1	dcd61d7a5c283f18cfe763552b09eb88	python-utils-r1	c9de01becf9df3f8c10aeec3dc693f5d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=08d903194661f3d462e2e4f1f90f5220

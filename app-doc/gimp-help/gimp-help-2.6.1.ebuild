@@ -1,11 +1,12 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI="4"
 inherit eutils
 
 DESCRIPTION="GNU Image Manipulation Program help files"
-HOMEPAGE="https://docs.gimp.org/"
+HOMEPAGE="http://docs.gimp.org/"
 
 LICENSE="FDL-1.2"
 SLOT="2"

@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile configure install prepare setup
-DEPEND=app-text/pandoc dev-haskell/pandoc-citeproc[bibutils] dev-texlive/texlive-fontsrecommended dev-texlive/texlive-latexrecommended virtual/pkgconfig || ( >=dev-lang/python-2.7.5-r2:2.7 ) api? ( media-fonts/dejavu ~sci-physics/root-6.04.06[X,graphviz,opengl] ) test? ( !prefix? ( x11-base/xorg-server[xvfb] ) x11-apps/xhost )
+DEPEND=app-text/pandoc dev-haskell/pandoc-citeproc[bibutils] dev-texlive/texlive-fontsrecommended dev-texlive/texlive-latexrecommended virtual/pkgconfig api? ( media-fonts/dejavu ~sci-physics/root-6.04.06[X,graphviz,opengl] ) test? ( !prefix? ( x11-base/xorg-server[xvfb] ) x11-apps/xhost )
 DESCRIPTION=Documentation for ROOT Data Analysis Framework
 EAPI=5
 HOMEPAGE=https://root.cern.ch
@@ -8,5 +8,5 @@ KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux
 LICENSE=LGPL-2.1
 SLOT=0
 SRC_URI=https://root.cern.ch/download/root_v6.04.06.source.tar.gz math? ( http://tmva.sourceforge.net/docu/TMVAUsersGuide.pdf -> TMVAUsersGuide-v4.2.0.pdf https://root.cern.ch/download/doc/RooFit_Users_Manual_2.91-33.pdf http://root.cern.ch/drupal/sites/default/files/roofit_quickstart_3.00.pdf ) api? ( https://root.cern.ch/sites/default/files/images/root6-banner.jpg https://root.cern.ch/sites/all/themes/newsflash/images/info.png )
-_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	python-any-r1	27d7f9da7187d283b7f3eae8390b7b09	python-utils-r1	c9de01becf9df3f8c10aeec3dc693f5d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	virtualx	171580f737f5aaf18fcb456548588066
-_md5_=909916962382859025be7e48dfbf0e90
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	python-any-r1	1c20f9b800324335a8e3b137363362e8	python-utils-r1	c9de01becf9df3f8c10aeec3dc693f5d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	virtualx	86c9305a59b3e0459e7fbef3a5f30b96
+_md5_=47f54f1f8091fc95ae83d58d08925d1c

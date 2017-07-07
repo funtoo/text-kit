@@ -7,5 +7,5 @@ KEYWORDS=~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86
 LICENSE=GPL-2
 SLOT=0
 SRC_URI=mirror://nongnu/ocrad/ocrad-0.24.tar.lz
-_eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	unpacker	f40f7b4bd5aa88c2a4ba7b0d1e0ded70
-_md5_=6b54fceaeb62ad15ee8cd63ada988287
+_eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	unpacker	45d07319df5f40ee6af58418b0f930be
+_md5_=bd34f93cef2ac0f051ec844454d43db9
