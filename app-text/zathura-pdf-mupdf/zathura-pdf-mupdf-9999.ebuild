@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -24,7 +25,7 @@ fi
 IUSE=""
 
 RDEPEND="!app-text/zathura-pdf-poppler
-	>=app-text/mupdf-1.10a:=
+	>=app-text/mupdf-1.7a:=
 	>=app-text/zathura-0.3.1
 	media-libs/jbig2dec:=
 	media-libs/openjpeg:2=

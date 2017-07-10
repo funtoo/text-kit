@@ -13,7 +13,6 @@ app-doc/kicad-doc:pdf - Generate documentation in PDF format
 app-doc/linuxfromscratch:htmlsingle - Install all-on-one-page HTML version.
 app-doc/pms:binary - Download pre-built files instead of building from sources
 app-doc/pms:html - Generate PMS as .html as well
-app-doc/pms:twoside - Enable two-sided layout suitable for printing
 app-doc/root-docs:api - Generate html API documentation
 app-doc/root-docs:http - Build HttpServer documentation
 app-doc/root-docs:math - Provide all math related documentation
@@ -33,22 +32,23 @@ app-text/atril:xps - Enable XPS viewer using app-text/libgxps
 app-text/blogc:git - Build blogc-git-receiver tool
 app-text/blogc:httpd - Build blogc-runserver tool
 app-text/blogc:make - Build blogc-make tool
-app-text/cb2bib:webengine - Use dev-qt/qtwebengine instead of dev-qt/qtwebkit
 app-text/crm114:mew - Add support for using the mewdecode mime decoder (app-emacs/mew)
 app-text/crm114:mimencode - Add support for using the mimencode mime (net-mail/metamail)
 app-text/crm114:normalizemime - Add support for using the normalizemime (mail-filter/normalizemime)
+app-text/cuneiform:graphicsmagick - Enables support of various input formats using media-gfx/graphicsmagick. Otherwise only uncompressed BMP files are supported.
+app-text/cuneiform:imagemagick - Enables support of various input formats using media-gfx/imagemagick. Otherwise only uncompressed BMP files are supported.
 app-text/dbacl:interactive - Enable the interactive mailinspect ability
 app-text/dictd:judy - Build Judy-based (dev-libs/judy) plugin implementing fast "exact" and especially "lev" strategies
 app-text/dictd:minimal - Don't build server but dict client, dictzip and dictfmt only.
 app-text/docbook-sgml-utils:jadetex - Add support for app-text/jadetex (for processing tex files produced by the TeX backend of Jade)
 app-text/docbook-xsl-ns-stylesheets:ruby - Install the Ruby-based dbtoepub script; requires an interpreter compatible with app-eselect/eselect-ruby.
+app-text/dvipng:t1lib - Enable support for T1lib font rendering (media-libs/t1lib)
 app-text/ebook-tools:lit2epub - Install lit2epub script
 app-text/editorconfig-core-c:cli - Install command line interface.
 app-text/enchant:aspell - Adds support for app-text/aspell spell checker
 app-text/enchant:hunspell - Adds support for app-text/hunspell spell checker
 app-text/enchant:zemberek - Adds support for app-text/zemberek-server spell checker server
 app-text/getxbook:ocr - Use app-text/tesseract for optical character recognition
-app-text/ghostscript-gpl:unicode - Add support for unicode passwords via net-dns/libidn
 app-text/glark:zip - Support for ZIP files using dev-ruby/rubyzip
 app-text/groonga:abort - Enable query abortion
 app-text/groonga:benchmark - Build benchmark programs
@@ -63,8 +63,6 @@ app-text/groonga:nfkc - Use nfkc based utf8 normalization
 app-text/groonga:sphinx - Enable document generation by app-misc/sphinx
 app-text/groonga:uyield - Build for detecting race conditions
 app-text/groonga:zeromq - Enable net-libs/zeromq used for suggestion
-app-text/gtranslator:gnome-dictionary - Enable plugin for dictionary lookups using app-dicts/gnome-dictionary.
-app-text/gtranslator:gucharmap - Enable plugin for unicode symbols selection using gnome-extra/gucharmap.
 app-text/hyperestraier:mecab - Enable app-text/mecab support for Estraier
 app-text/jmupdf:system-mupdf - Link against system version of app-text/mupdf
 app-text/lcdf-typetools:kpathsea - Enable integration with kpathsea search library (TeX related)
@@ -82,12 +80,11 @@ app-text/pandoc:https - Enable support for downloading of resources over https.
 app-text/pandoc:make-pandoc-man-pages - Build program to regenerate pandoc man pages from README.
 app-text/pandoc:network-uri - Get Network.URI from the network-uri package.
 app-text/pandoc:trypandoc - Build trypandoc cgi executable.
-app-text/pandoc:weigh-pandoc - Build weigh-pandoc to measure memory usage.
 app-text/pastebinit:crypt - Install pbputs for gpg-encrypted pastes
+app-text/pdf2djvu:graphicsmagick - Enable media-gfx/graphicsmagick support
 app-text/pdfgrep:unac - Removing accents and ligatures before search
 app-text/pelican:markdown - Markdown support
 app-text/podofo:boost - Add support for boost
-app-text/podofo:tools - Build and install commandline tools.
 app-text/qpdf:perl - Install fix-qdf tool (for reverting PDF edits) written in perl
 app-text/qpdfview:fitz - Use experimental fitz rendering, provided by app-text/mupdf, instead of poppler
 app-text/qpdfview:synctex - Add support for searching TeX sources
@@ -115,12 +112,13 @@ app-text/stardict:youdaodict - Enable youdao.com network plugin (for Chinese lan
 app-text/tesseract:math - Enable support for recognition of equations.
 app-text/tesseract:opencl - Enable opencl support for speedup using GPU computation.
 app-text/tesseract:osd - Enable support orientation and script detection.
-app-text/tesseract:scrollview - Install viewer to debug recognition (ScrollView).
+app-text/tesseract:scrollview - Enable graphics support (ScrollView).
 app-text/tesseract:training - Install training applications to add support for new languages.
 app-text/tesseract:webp - Enable support for webp image format.
 app-text/texlive:context - Add support for the ConTeXt format (dev-texlive/texlive-context)
 app-text/texlive:detex - Add support for dev-tex/detex, a filter program that removes the LaTeX (or TeX) control sequences
 app-text/texlive:dvi2tty - Add support for dev-tex/dvi2tty to preview dvi-files on text-only devices
+app-text/texlive:dvipdfm - Add support for app-text/dvipdfm to convert DVI files to PDF
 app-text/texlive:epspdf - Add support for app-text/epspdf, a tool for converting [e]ps files to pdf.
 app-text/texlive:extra - Add support for extra TeXLive packages
 app-text/texlive:games - Add typesetting support for games (chess, etc.) (dev-texlive/texlive-games)
@@ -166,7 +164,6 @@ app-text/zathura:magic - Use libmagic to determine mimetypes
 app-text/zathura:synctex - Use libsynctex to get latex codeline from pdf
 app-text/zathura-meta:cb - Install plug-in for ComicBook support
 dev-tex/abntex:lyx - Install with app-office/lyx layout
-dev-tex/biblatex:biber - Install the unicode compatible backend processor
 dev-tex/circuit_macros:script - Install cm2pdf to automatically create a correctly sized PDF from a circuit_macro m4 source
 dev-tex/dot2texi:pgf - Enable support for dev-tex/pgf (The TeX Portable Graphic Format)
 dev-tex/dot2texi:pstricks - Enable pstricks support

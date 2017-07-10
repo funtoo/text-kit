@@ -1,15 +1,14 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-
-EAPI=6
+# $Id$
 
 ASPELL_LANG="Romanian"
-ASPELL_VERSION=5
+ASPOSTFIX="5"
 
-inherit aspell-dict-r1
+inherit aspell-dict
 
 HOMEPAGE="http://aspell.net http://rospell.sourceforge.net/"
 
 LICENSE="GPL-2"
-KEYWORDS="alpha amd64 arm ~arm64 hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
-IUSE=""
+
+KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"

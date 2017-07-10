@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -14,7 +15,8 @@ LICENSE="FDL-1.3+"
 SLOT="24"
 KEYWORDS="amd64 ppc x86 ~x86-fbsd"
 
-DEPEND="sys-apps/texinfo"
+DEPEND="app-arch/xz-utils
+	sys-apps/texinfo"
 
 S="${WORKDIR}/lispref"
 

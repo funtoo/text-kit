@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI=5
 
@@ -31,19 +32,19 @@ inherit myspell-r2
 
 DESCRIPTION="German dictionaries for myspell/hunspell"
 HOMEPAGE="
-	https://extensions.libreoffice.org/extensions/german-de-at-frami-dictionaries
-	https://extensions.libreoffice.org/extensions/german-de-de-frami-dictionaries
-	https://extensions.libreoffice.org/extensions/german-de-ch-frami-dictionaries
+	http://extensions.libreoffice.org/extension-center/german-de-at-frami-dictionaries
+	http://extensions.libreoffice.org/extension-center/german-de-de-frami-dictionaries
+	http://extensions.libreoffice.org/extension-center/german-de-ch-frami-dictionaries
 "
 SRC_URI="
-	https://extensions.libreoffice.org/extensions/german-de-at-frami-dictionaries/${PV}/@@download/file/dict-de_at-frami_${PV//./-}.oxt
-	https://extensions.libreoffice.org/extensions/german-de-de-frami-dictionaries/${PV}/@@download/file/dict-de_de-frami_${PV//./-}.oxt
-	https://extensions.libreoffice.org/extensions/german-de-ch-frami-dictionaries/${PV}/@@download/file/dict-de_ch-frami_${PV//./-}.oxt
+	http://extensions.libreoffice.org/extension-center/german-de-at-frami-dictionaries/pscreleasefolder.2011-11-05.7614737245/${PV}/dict-de_at-frami_${PV//./-}.oxt
+	http://extensions.libreoffice.org/extension-center/german-de-de-frami-dictionaries/releases/${PV}/dict-de_de-frami_${PV//./-}.oxt
+	http://extensions.libreoffice.org/extension-center/german-de-ch-frami-dictionaries/pscreleasefolder.2011-11-05.5296069116/${PV}/dict-de_ch-frami_${PV//./-}.oxt
 "
 
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm ~arm64 hppa ia64 ~mips ppc ppc64 ~sh sparc x86 ~amd64-fbsd ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~sh sparc x86 ~amd64-fbsd ~x86-fbsd"
 IUSE=""
 
 src_prepare() {

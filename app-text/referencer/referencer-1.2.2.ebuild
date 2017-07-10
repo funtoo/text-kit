@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI="5"
 
@@ -13,16 +14,15 @@ SRC_URI="https://launchpad.net/${PN}/1./${PV}/+download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE=""
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+KEYWORDS="~amd64 ~x86"
 
-RDEPEND="${PYTHON_DEPS}
-	>=app-text/poppler-0.12.3-r3:=[cairo]
+RDEPEND=">=app-text/poppler-0.12.3-r3:=[cairo]
 	>=dev-cpp/gtkmm-2.8:*
 	>=dev-cpp/libglademm-2.6.0
 	>=dev-cpp/gconfmm-2.14.0
 	>=dev-libs/boost-1.52.0-r4"
+
 DEPEND="${RDEPEND}
 	>=app-text/gnome-doc-utils-0.3.2
 	virtual/pkgconfig
