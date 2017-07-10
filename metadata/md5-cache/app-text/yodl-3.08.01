@@ -9,4 +9,4 @@ LICENSE=GPL-3
 SLOT=0
 SRC_URI=https://github.com/fbb-git/yodl/archive/3.08.01.tar.gz -> yodl-3.08.01.tar.gz
 _eclasses_=multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=624124d2fbbe99b8fd8c17c1be572c2a
+_md5_=a7c4ed585d724e704a935f196df4bf01

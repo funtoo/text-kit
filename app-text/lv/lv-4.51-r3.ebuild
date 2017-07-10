@@ -1,6 +1,5 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="4"
 
@@ -27,7 +26,9 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-gentoo.patch
 	epatch "${FILESDIR}"/${P}-xz.diff
 	epatch "${FILESDIR}"/${P}-tinfo.patch
-	cd "${S}"/src; eautoreconf
+	epatch "${FILESDIR}"/${P}-protos.patch
+	cd "${S}"/src
+	eautoreconf
 }
 
 src_configure() {

@@ -1,6 +1,5 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 inherit eutils
@@ -11,7 +10,7 @@ SRC_URI="http://www.moria.de/~michael/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64 hppa ~mips ppc sparc x86 ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos"
+KEYWORDS="amd64 hppa ~mips ppc sparc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos"
 
 DEPEND="
 	sys-devel/gettext

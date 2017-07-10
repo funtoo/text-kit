@@ -1,6 +1,5 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="3"
 
@@ -14,7 +13,7 @@ SRC_URI="mirror://sourceforge/docbook/${MY_P}.tar.bz2"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="alpha amd64 arm arm64 hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x64-solaris"
+KEYWORDS="alpha amd64 arm arm64 hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x64-solaris"
 IUSE=""
 
 RDEPEND="app-text/sgml-common"
@@ -50,7 +49,7 @@ src_install() {
 		ewarn "as directory already exists there.  Will assume you know"
 		ewarn "what you're doing."
 	else
-		dosym /usr/share/sgml/docbook/dsssl-stylesheets-${PV} \
+		dosym ../../docbook/dsssl-stylesheets-${PV} \
 			/usr/share/sgml/stylesheets/dsssl/docbook
 	fi
 

@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -8,7 +7,7 @@ EGIT_REPO_URI="git://git.code.sf.net/p/libmwaw/libmwaw"
 [[ ${PV} == 9999 ]] && inherit autotools git-r3
 
 DESCRIPTION="Library parsing many pre-OSX MAC text formats"
-HOMEPAGE="http://sourceforge.net/p/libmwaw/wiki/Home/"
+HOMEPAGE="https://sourceforge.net/p/libmwaw/wiki/Home/"
 [[ ${PV} == 9999 ]] || SRC_URI="mirror://sourceforge/${PN}/${P}.tar.xz"
 
 LICENSE="LGPL-2.1"
@@ -21,7 +20,6 @@ IUSE="doc static-libs tools"
 
 RDEPEND="
 	dev-libs/librevenge
-	dev-libs/libxml2
 	sys-libs/zlib
 "
 DEPEND="${RDEPEND}

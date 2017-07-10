@@ -1,6 +1,5 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 inherit eutils webapp
 
@@ -23,7 +22,7 @@ src_unpack() {
 
 	# filter user-provided data to prevent cross-frame/site scripting attacks
 	# bug #91354 (fix from Werner Fink)
-	epatch ${FILESDIR}/info2html-2.0-xss.patch
+	epatch "${FILESDIR}"/info2html-2.0-xss.patch
 
 	# Fixup INFODIR for paths in /etc/profile.env INFOPATH
 	infos=$(grep "^export INFOPATH=" /etc/profile.env | tail -n 1 |\
