@@ -1,6 +1,5 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 inherit eutils
 
@@ -21,7 +20,7 @@ RDEPEND="app-dicts/migemo-dict
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/${PN}-1.2-migemo-dict.diff
+	epatch "${FILESDIR}"/${PN}-1.2-migemo-dict.diff
 	touch ${S}/dict/SKK-JISYO.L
 
 	# Bug #246953
