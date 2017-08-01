@@ -16,7 +16,7 @@ IUSE="doc examples"
 
 RDEPEND="dev-texlive/texlive-bibtexextra
 	dev-texlive/texlive-latexextra
-	dev-texlive/texlive-genericextra"
+	dev-texlive/texlive-plaingeneric"
 DEPEND="${RDEPEND}"
 
 S=${WORKDIR}
