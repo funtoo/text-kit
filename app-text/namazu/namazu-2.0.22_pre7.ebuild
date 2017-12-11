@@ -5,13 +5,15 @@ EAPI="6"
 
 inherit autotools elisp-common ltprune
 
+MY_P="${P/_pre/pre}"
+
 DESCRIPTION="Namazu is a full-text search engine"
 HOMEPAGE="http://www.namazu.org/"
-SRC_URI="http://www.namazu.org/stable/${P}.tar.gz"
+SRC_URI="http://www.namazu.org/test/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~ppc64 x86"
+KEYWORDS=""
 IUSE="emacs l10n_ja nls static-libs tk"
 
 RDEPEND="dev-perl/File-MMagic
@@ -32,13 +34,9 @@ RDEPEND="dev-perl/File-MMagic
 	)"
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
+S="${WORKDIR}"/${MY_P}
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-gentoo.patch
-	"${FILESDIR}"/${PN}-perl-5.18.patch
-	"${FILESDIR}"/${PN}-perl-5.26.patch
-	"${FILESDIR}"/${P}-memmove.patch
-)
+PATCHES=( "${FILESDIR}"/${PN}-gentoo.patch )
 
 src_prepare() {
 	default
