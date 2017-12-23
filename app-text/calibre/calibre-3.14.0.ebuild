@@ -1,4 +1,3 @@
-# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -6,7 +5,7 @@ EAPI=6
 PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="sqlite,ssl"
 
-inherit eutils fdo-mime bash-completion-r1 multilib toolchain-funcs python-single-r1
+inherit eutils fdo-mime gnome2-utils bash-completion-r1 multilib toolchain-funcs python-single-r1
 
 DESCRIPTION="Ebook management application"
 HOMEPAGE="http://calibre-ebook.com/"
@@ -52,6 +51,7 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	>=dev-python/dbus-python-1.2.4[${PYTHON_USEDEP}]
 	>=dev-libs/dbus-glib-0.106
 	>=sys-apps/dbus-1.10.8
+	dev-python/html5-parser[${PYTHON_USEDEP}]
 	>=dev-python/lxml-3.2.1[${PYTHON_USEDEP}]
 	>=dev-python/mechanize-0.2.5[${PYTHON_USEDEP}]
 	dev-python/msgpack[${PYTHON_USEDEP}]
@@ -74,7 +74,7 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	>=media-gfx/optipng-0.7.6
 	sys-libs/zlib
 	virtual/libusb:1=
-	virtual/python-dnspython[${PYTHON_USEDEP}]
+	dev-python/dnspython[${PYTHON_USEDEP}]
 	x11-libs/libX11
 	x11-libs/libXext
 	x11-libs/libXrender
@@ -268,9 +268,12 @@ pkg_postinst() {
 	done
 	fdo-mime_desktop_database_update
 	fdo-mime_mime_database_update
+	gnome2_icon_cache_update
 }
 
 pkg_postrm() {
 	fdo-mime_desktop_database_update
 	fdo-mime_mime_database_update
+	gnome2_icon_cache_update
 }
+
