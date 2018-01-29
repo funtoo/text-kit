@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
-inherit eutils toolchain-funcs
+inherit eutils toolchain-funcs xdg
 
 if [[ ${PV} == *9999 ]]; then
 	inherit git-r3
@@ -22,7 +22,7 @@ SLOT="0"
 IUSE=""
 
 RDEPEND=">=app-text/libspectre-0.2.6:=
-	>=app-text/zathura-0.2.7
+	>=app-text/zathura-0.3.8
 	dev-libs/glib:2=
 	x11-libs/cairo:="
 DEPEND="${RDEPEND}

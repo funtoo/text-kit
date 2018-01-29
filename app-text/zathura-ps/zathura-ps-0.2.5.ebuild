@@ -1,16 +1,16 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
-inherit eutils toolchain-funcs
+inherit eutils toolchain-funcs xdg
 
 if [[ ${PV} == *9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://git.pwmt.org/pwmt/zathura-ps.git"
 	EGIT_BRANCH="develop"
 else
-	KEYWORDS="amd64 arm x86 ~amd64-linux ~x86-linux"
+	KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
 	SRC_URI="http://pwmt.org/projects/zathura/plugins/download/${P}.tar.gz"
 fi
 
@@ -22,7 +22,7 @@ SLOT="0"
 IUSE=""
 
 RDEPEND=">=app-text/libspectre-0.2.6:=
-	>=app-text/zathura-0.2.7
+	>=app-text/zathura-0.3.8
 	dev-libs/glib:2=
 	x11-libs/cairo:="
 DEPEND="${RDEPEND}
