@@ -10,4 +10,4 @@ RDEPEND=dev-lang/lua:0= qt5? ( dev-libs/double-conversion:= dev-qt/qtcore:5 dev-
 SLOT=0
 SRC_URI=http://www.andre-simon.de/zip/highlight-3.42.tar.bz2
 _eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	flag-o-matic	02908f00f002f0f07c5b74783d778325	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	qmake-utils	990448b067cb3cfe1443bc25fb57239c	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=0742eac647149c9bfcaa9ab4509c9b76
+_md5_=a74c0cc6b6a4300d24af0cacb765f78f
