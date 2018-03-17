@@ -30,6 +30,7 @@ LIB_DEPEND="
 	opengl? ( >=media-libs/glfw-3.2 )"
 RDEPEND="${LIB_DEPEND}"
 DEPEND="${RDEPEND}
+	media-libs/freeglut
 	virtual/pkgconfig
 	static-libs? ( ${LIB_DEPEND} )
 	static? ( ${LIB_DEPEND//?}
