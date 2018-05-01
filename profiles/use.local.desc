@@ -47,7 +47,6 @@ app-text/ebook-tools:lit2epub - Install lit2epub script
 app-text/editorconfig-core-c:cli - Install command line interface.
 app-text/enchant:aspell - Adds support for app-text/aspell spell checker
 app-text/enchant:hunspell - Adds support for app-text/hunspell spell checker
-app-text/enchant:zemberek - Adds support for app-text/zemberek-server spell checker server
 app-text/getxbook:ocr - Use app-text/tesseract for optical character recognition
 app-text/ghostscript-gpl:unicode - Add support for unicode passwords via net-dns/libidn
 app-text/glark:zip - Support for ZIP files using dev-ruby/rubyzip
