@@ -5,5 +5,5 @@ EAPI=6
 HOMEPAGE=https://devmanual.gentoo.org/
 LICENSE=CC-BY-SA-2.0
 SLOT=0
-_eclasses_=git-r3	fec09a83ae965b041b47f5ff7c8ba29a	readme.gentoo-r1	6f03e110529650f57fc7d1fb908b8986
+_eclasses_=git-r3	18aed4252aebae08e3db185e684ee37c	readme.gentoo-r1	2b27b7fcc73685ec7e0456c3b48a2fff
 _md5_=29fc17a51063da4e25cb135e56d8ca87
