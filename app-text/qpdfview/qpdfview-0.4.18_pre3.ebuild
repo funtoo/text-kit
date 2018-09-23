@@ -1,14 +1,14 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-PLOCALES="ast az be bg bs ca cs da de el en_GB eo es eu fi fr gl he hr hu id it kk ko ky lt ms my pl pt pt_BR ro ru sk sv th tr ug uk vi zh_CN"
+PLOCALES="ast az be bg bs ca cs da de el en_AU en_GB eo es eu fa fi fr gl he hr hu id it ja kk ko ku ky lt lv ms my nb nds oc pl pt pt_BR ro ru sk sr sv th tr ug uk uz vi zh_CN zh_TW"
 
-inherit l10n qmake-utils
+inherit l10n qmake-utils xdg-utils gnome2-utils
 
 DESCRIPTION="A tabbed document viewer"
 HOMEPAGE="https://launchpad.net/qpdfview"
-SRC_URI="https://launchpad.net/${PN}/trunk/${PV/_/}/+download/${P/_/}.tar.gz"
+SRC_URI="https://dev.gentoo.org/~grozin/${P}.tar.gz"
 
 LICENSE="GPL-2+"
 SLOT="0"
@@ -18,20 +18,18 @@ IUSE="cups +dbus djvu fitz +pdf postscript +sqlite +svg synctex"
 REQUIRED_USE="?? ( fitz pdf )"
 
 RDEPEND="
+	cups? ( net-print/cups )
+	djvu? ( app-text/djvu )
+	fitz? ( >=app-text/mupdf-1.7:= )
+	postscript? ( app-text/libspectre )
 	dev-qt/qtconcurrent:5
 	dev-qt/qtcore:5
 	dev-qt/qtgui:5
 	dev-qt/qtprintsupport:5
 	dev-qt/qtwidgets:5
-	cups? ( net-print/cups )
 	dbus? ( dev-qt/qtdbus:5 )
-	djvu? ( app-text/djvu )
-	fitz? ( >=app-text/mupdf-1.7:= )
-	pdf? (
-		>=app-text/poppler-0.35[qt5]
-		dev-qt/qtxml:5
-	)
-	postscript? ( app-text/libspectre )
+	pdf? ( >=app-text/poppler-0.35[qt5]
+		dev-qt/qtxml:5 )
 	sqlite? ( dev-qt/qtsql:5[sqlite] )
 	svg? ( dev-qt/qtsvg:5 )
 	!svg? ( virtual/freedesktop-icon-theme )
@@ -41,8 +39,6 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
 DOCS=( CHANGES CONTRIBUTORS README TODO )
-
-S="${WORKDIR}/${P/_/}"
 
 src_prepare() {
 	local mylrelease="$(qt5_get_bindir)"/lrelease
@@ -85,4 +81,16 @@ src_configure() {
 src_install() {
 	emake INSTALL_ROOT="${D}" install
 	einstalldocs
+}
+
+pkg_postinst() {
+	xdg_desktop_database_update
+	xdg_mimeinfo_database_update
+	gnome2_icon_cache_update
+}
+
+pkg_postrm() {
+	xdg_desktop_database_update
+	xdg_mimeinfo_database_update
+	gnome2_icon_cache_update
 }
