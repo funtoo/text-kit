@@ -1,9 +1,0 @@
-DEFINED_PHASES=compile install postinst unpack
-DEPEND=dev-libs/libxslt media-gfx/imagemagick[truetype,svg,png] >=dev-vcs/git-1.8.2.1
-DESCRIPTION=The Gentoo Development Guide
-EAPI=6
-HOMEPAGE=https://devmanual.gentoo.org/
-LICENSE=CC-BY-SA-2.0
-SLOT=0
-_eclasses_=git-r3	18aed4252aebae08e3db185e684ee37c	readme.gentoo-r1	2b27b7fcc73685ec7e0456c3b48a2fff
-_md5_=29fc17a51063da4e25cb135e56d8ca87
