@@ -116,7 +116,6 @@ app-text/tesseract:opencl - Enable opencl support for speedup using GPU computat
 app-text/tesseract:osd - Enable support orientation and script detection.
 app-text/tesseract:scrollview - Install viewer to debug recognition (ScrollView).
 app-text/tesseract:training - Install training applications to add support for new languages.
-app-text/tesseract:webp - Enable support for webp image format.
 app-text/texlive:context - Add support for the ConTeXt format (dev-texlive/texlive-context)
 app-text/texlive:detex - Add support for dev-tex/detex, a filter program that removes the LaTeX (or TeX) control sequences
 app-text/texlive:dvi2tty - Add support for dev-tex/dvi2tty to preview dvi-files on text-only devices
