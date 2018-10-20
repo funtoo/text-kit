@@ -13,7 +13,7 @@ SLOT="0"
 LICENSE="GPL-2"
 IUSE="motif neXt Xaw3d emacs"
 
-CDEPEND=">=media-libs/freetype-2.9.1-r2:2
+CDEPEND="media-libs/freetype
 	x11-libs/libX11
 	x11-libs/libXi
 	x11-libs/libXmu
@@ -44,8 +44,10 @@ src_prepare() {
 	cd "${WORKDIR}/${P}/texk/kpathsea"
 	for i in *.h ; do echo "#include_next \"$i\"" > $i; done
 
-	cd "${WORKDIR}/${P}"
-	eapply "${FILESDIR}"/${P}-freetype2-config.patch
+	if has_version '>=media-libs/freetype-2.9.1' ; then
+		cd "${WORKDIR}/${P}"
+		eapply "${FILESDIR}"/${P}-freetype2-config.patch
+	fi
 	cd "${S}"
 	eautoreconf
 
