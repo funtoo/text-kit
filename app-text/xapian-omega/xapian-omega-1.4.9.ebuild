@@ -1,7 +1,7 @@
 # Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
+EAPI="6"
 
 DESCRIPTION="An application built on Xapian, consisting of indexers and a CGI search frontend"
 SRC_URI="http://www.oligarchy.co.uk/xapian/${PV}/xapian-omega-${PV}.tar.xz"
@@ -10,10 +10,10 @@ S="${WORKDIR}/xapian-omega-${PV}"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~arm ~ia64 ~mips ppc ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-DEPEND="dev-libs/xapian:0/1.2.22
+DEPEND="dev-libs/xapian:0/30
 	dev-lang/perl
 	dev-libs/libpcre
 	sys-libs/zlib"
@@ -26,9 +26,6 @@ src_install () {
 	echo "CONFIG_PROTECT=\"/etc/omega.conf\"" > "${T}"/20xapian-omega
 	doenvd "${T}"/20xapian-omega
 	dodoc AUTHORS ChangeLog INSTALL NEWS README TODO
-
-	#move docs to /usr/share/doc/${PF}.
-	mv "${D}/usr/share/doc/xapian-omega" "${D}/usr/share/doc/${PF}" || die
 
 	# Directory containing Xapian databases:
 	keepdir /var/lib/omega/data
