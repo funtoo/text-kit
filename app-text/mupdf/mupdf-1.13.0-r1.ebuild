@@ -1,9 +1,9 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-inherit flag-o-matic toolchain-funcs
+inherit flag-o-matic toolchain-funcs xdg
 
 DESCRIPTION="a lightweight PDF viewer and toolkit written in portable C"
 HOMEPAGE="https://mupdf.com/"
@@ -11,23 +11,23 @@ SRC_URI="https://mupdf.com/downloads/${P}-source.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0/${PV}"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~ppc-macos ~x64-macos ~x86-macos"
-IUSE="X +curl javascript libressl opengl +openssl static static-libs vanilla"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~ppc ~ppc64 ~x86 ~amd64-linux ~ppc-macos ~x64-macos ~x86-macos"
+IUSE="X +curl javascript lcms libressl opengl +openssl static static-libs vanilla"
 
 LIB_DEPEND="
-	!libressl? ( dev-libs/openssl:0[static-libs?] )
-	libressl? ( dev-libs/libressl[static-libs?] )
+	!libressl? ( dev-libs/openssl:0=[static-libs?] )
+	libressl? ( dev-libs/libressl:0=[static-libs?] )
 	javascript? ( >=dev-lang/mujs-0_p20160504 )
-	media-libs/freetype:2[static-libs?]
-	media-libs/harfbuzz[static-libs?]
-	media-libs/jbig2dec[static-libs?]
-	media-libs/libpng:0[static-libs?]
-	>=media-libs/openjpeg-2.1:2[static-libs?]
+	media-libs/freetype:2=[static-libs?]
+	media-libs/harfbuzz:=[static-libs?]
+	media-libs/jbig2dec:=[static-libs?]
+	media-libs/libpng:0=[static-libs?]
+	>=media-libs/openjpeg-2.1:2=[static-libs?]
 	net-misc/curl[static-libs?]
 	virtual/jpeg[static-libs?]
 	X? ( x11-libs/libX11[static-libs?]
 		x11-libs/libXext[static-libs?] )
-	opengl? ( >=media-libs/glfw-3.2 )"
+	opengl? ( >=media-libs/freeglut-3.0.0:= )"
 RDEPEND="${LIB_DEPEND}"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
@@ -43,20 +43,28 @@ REQUIRED_USE="opengl? ( !static !static-libs )"
 S=${WORKDIR}/${P}-source
 
 PATCHES=(
-		"${FILESDIR}"/${PN}-1.11-CFLAGS.patch
+		"${FILESDIR}"/${PN}-1.12-CFLAGS.patch
 		"${FILESDIR}"/${PN}-1.9a-debug-build.patch
 		"${FILESDIR}"/${PN}-1.10a-add-desktop-pc-xpm-files.patch
-		"${FILESDIR}"/${PN}-1.11-openssl-curl-x11.patch
-		"${FILESDIR}"/${PN}-1.11-system-glfw.patch
-		"${FILESDIR}"/${PN}-1.11-CVE-2017-6060.patch
+		"${FILESDIR}"/${PN}-1.13-openssl-curl-x11.patch
 		"${FILESDIR}"/${PN}-1.11-drop-libmupdfthird.patch
+		# See bug #662352
+		"${FILESDIR}"/${PN}-1.13-libressl.patch
 )
 
 src_prepare() {
-	default
+	xdg_src_prepare
 	use hppa && append-cflags -ffunction-sections
 
-	rm -rf thirdparty || die
+	# specialized lcms2, keep it if wanted inside lubmupdfthird
+	if ! use lcms ; then
+		rm -rf thirdparty/lcms2
+	fi
+
+	rm -rf thirdparty/{README,curl,freeglut,freetype,harfbuzz,jbig2dec,libjpeg,mujs,openjpeg,zlib} || die
+	for my_third in thirdparty/* ; do
+		ewarn "Bundled thirdparty lib: ${my_third}"
+	done
 
 	if has_version ">=media-libs/openjpeg-2.1:2" ; then
 		# Remove a switch, which prevents using shared libraries for openjpeg2.
@@ -84,13 +92,6 @@ src_prepare() {
 		-e "1iprefix = ${ED}usr" \
 		-e "1ilibdir = ${ED}usr/$(get_libdir)" \
 		-e "1idocdir = ${ED}usr/share/doc/${PF}" \
-		-e "1iWANT_X11 = $(usex X)" \
-		-e "1iWANT_OPENSSL = $(usex openssl)" \
-		-e "1iWANT_CURL = $(usex curl)" \
-		-e "1iHAVE_MUJS = $(usex javascript)" \
-		-e "1iMUJS_LIBS = $(usex javascript -lmujs '')" \
-		-e "1iMUJS_CFLAGS =" \
-		-e "1iHAVE_GLFW = $(usex opengl yes no)" \
 		-i Makerules || die
 
 	if use static-libs || use static ; then
@@ -114,7 +115,15 @@ src_prepare() {
 }
 
 src_compile() {
-	emake XCFLAGS="-fpic"
+	use lcms && emake XCFLAGS="-fpic" third
+	emake XCFLAGS="-fpic" \
+		HAVE_GLUT=$(usex opengl yes no) \
+		HAVE_MUJS=$(usex javascript) \
+		MUJS_LIBS=$(usex javascript -lmujs '') \
+		WANT_CURL=$(usex curl) \
+		WANT_OPENSSL=$(usex openssl) \
+		WANT_X11=$(usex X)
+
 	use static-libs && \
 		emake -C "${S}"-static build/debug/lib${PN}{,-js-none}.a
 	use static && \
@@ -129,7 +138,14 @@ src_install() {
 		rm docs/man/${PN}.1
 	fi
 
-	emake install
+	emake install \
+		HAVE_GLUT=$(usex opengl yes no) \
+		HAVE_MUJS=$(usex javascript) \
+		MUJS_LIBS=$(usex javascript -lmujs '') \
+		WANT_CURL=$(usex curl) \
+		WANT_OPENSSL=$(usex openssl) \
+		WANT_X11=$(usex X)
+
 	dosym ${my_soname} /usr/$(get_libdir)/lib${PN}.so
 
 	use static-libs && \
@@ -148,5 +164,5 @@ src_install() {
 	insinto /usr/$(get_libdir)/pkgconfig
 	doins platform/debian/${PN}.pc
 
-	dodoc README CHANGES docs/*.{txt,c}
+	dodoc README CHANGES CONTRIBUTORS
 }
