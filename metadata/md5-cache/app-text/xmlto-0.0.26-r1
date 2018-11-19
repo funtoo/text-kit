@@ -9,5 +9,5 @@ LICENSE=GPL-2
 RDEPEND=>=app-text/docbook-xsl-stylesheets-1.62.0-r1 app-text/docbook-xml-dtd:4.2 app-shells/bash:0 dev-libs/libxslt sys-apps/sed || ( >=sys-apps/coreutils-6.10-r1 sys-freebsd/freebsd-ubin ) || ( sys-apps/util-linux app-misc/getopt ) || ( sys-apps/which sys-freebsd/freebsd-ubin ) text? ( || ( virtual/w3m www-client/lynx www-client/links ) ) latex? ( >=app-text/passivetex-1.25 >=dev-tex/xmltex-1.9-r2 )
 SLOT=0
 SRC_URI=https://releases.pagure.org/xmlto/xmlto-0.0.26.tar.bz2
-_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	e99babeaa7d98c1caaa6a61a79902210	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	fa43c370cf1e0d4ada6e123b775a35b7
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	e99babeaa7d98c1caaa6a61a79902210	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
 _md5_=acb86d362b8236d52798b8f10b51f5dc
