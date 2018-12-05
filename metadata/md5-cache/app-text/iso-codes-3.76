@@ -1,5 +1,5 @@
 DEFINED_PHASES=prepare setup
-DEPEND=|| ( dev-lang/python:3.6 dev-lang/python:3.5 dev-lang/python:3.4 ) app-arch/xz-utils sys-devel/gettext >=app-portage/elt-patches-20170317
+DEPEND=|| ( dev-lang/python:3.6 dev-lang/python:3.5 dev-lang/python:3.4 dev-lang/python:3.7 ) app-arch/xz-utils sys-devel/gettext >=app-portage/elt-patches-20170317
 DESCRIPTION=ISO language, territory, currency, script codes and their translations
 EAPI=6
 HOMEPAGE=http://pkg-isocodes.alioth.debian.org/
@@ -9,4 +9,4 @@ RESTRICT=binchecks strip
 SLOT=0
 SRC_URI=http://pkg-isocodes.alioth.debian.org/downloads/iso-codes-3.76.tar.xz
 _eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	e99babeaa7d98c1caaa6a61a79902210	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	l10n	07318ed5f26525a9d302ca87d20b2865	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	python-any-r1	3b48a54b2b31a6bc928e459fec3adb54	python-utils-r1	b5fdfa15cbe2f6299a482bf5d0c5925d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
-_md5_=e4005809fd8442dedf4f94474ebfd752
+_md5_=9c724121f0b52e4808037d26c0dfe537
