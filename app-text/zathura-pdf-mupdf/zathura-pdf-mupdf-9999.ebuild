@@ -1,39 +1,53 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=6
 
-inherit meson
+inherit eutils toolchain-funcs xdg
 
 if [[ ${PV} == *9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://git.pwmt.org/pwmt/zathura-pdf-mupdf.git"
 	EGIT_BRANCH="develop"
 else
-	KEYWORDS="~amd64 ~arm ~x86"
-	SRC_URI="https://pwmt.org/projects/zathura-pdf-mupdf/download/${P}.tar.xz"
+	KEYWORDS=""
+	SRC_URI="http://pwmt.org/projects/zathura/plugins/download/${P}.tar.gz"
 fi
 
 DESCRIPTION="PDF plug-in for zathura"
-HOMEPAGE="https://pwmt.org/projects/zathura-pdf-mupdf/"
+HOMEPAGE="http://pwmt.org/projects/zathura/"
 
 LICENSE="ZLIB"
 SLOT="0"
+IUSE=""
 
-DEPEND="app-text/mupdf
-	>=app-text/zathura-0.3.9
-	dev-libs/girara
-	dev-libs/glib:2
+RDEPEND="!app-text/zathura-pdf-poppler
+	>=app-text/mupdf-1.12.0:=
+	>=app-text/zathura-0.3.8
 	media-libs/jbig2dec:=
 	media-libs/openjpeg:2=
 	virtual/jpeg:0
-	x11-libs/cairo"
+	x11-libs/cairo:="
+DEPEND="${RDEPEND}
+	virtual/pkgconfig"
 
-RDEPEND="${DEPEND}"
+src_configure() {
+	myzathuraconf=(
+		CC="$(tc-getCC)"
+		LD="$(tc-getLD)"
+		VERBOSE=1
+		DESTDIR="${D}"
+		MUPDF_LIB="$($(tc-getPKG_CONFIG) --libs mupdf)"
+		OPENSSL_INC="$($(tc-getPKG_CONFIG) --cflags mupdf)"
+		OPENSSL_LIB=''
+	)
+}
 
-BDEPEND="virtual/pkgconfig"
+src_compile() {
+	emake "${myzathuraconf[@]}"
+}
 
-src_prepare() {
-	sed -i -e '/mupdfthird/d' meson.build || die "sed failed"
-	default
+src_install() {
+	emake "${myzathuraconf[@]}" install
+	dodoc AUTHORS
 }

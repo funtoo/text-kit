@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile install
+DEPEND=>=dev-lang/ocaml-4:= dev-ml/camlpdf:= >=dev-ml/findlib-1.0.4-r1
+DESCRIPTION=A command line tool for manipulating PDF files
+EAPI=5
+HOMEPAGE=http://community.coherentpdf.com/ https://github.com/johnwhitington/cpdf-source/
+IUSE=doc
+KEYWORDS=~amd64 ~x86
+LICENSE=Coherent-Graphics BSD
+RDEPEND=>=dev-lang/ocaml-4:= dev-ml/camlpdf:=
+RESTRICT=mirror bindist
+SLOT=0
+SRC_URI=https://github.com/johnwhitington/cpdf-source/archive/0bae130aad8f3b53d3d2c71ecf62c43e206adc2d.tar.gz -> cpdf-2.2.1_p20171122.tar.gz
+_eclasses_=findlib	45d6030075064a68da8d7143726a1150
+_md5_=704629970a29760de828f0a4537b0975

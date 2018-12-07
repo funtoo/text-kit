@@ -1,64 +1,69 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=5
 
-inherit gnome2-utils meson virtualx xdg-utils
+inherit eutils multilib toolchain-funcs virtualx xdg-utils
+
+if [[ ${PV} == *9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://git.pwmt.org/pwmt/zathura.git"
+	EGIT_BRANCH="develop"
+else
+	KEYWORDS=""
+	SRC_URI="http://pwmt.org/projects/${PN}/download/${P}.tar.gz"
+fi
 
 DESCRIPTION="A highly customizable and functional document viewer"
 HOMEPAGE="http://pwmt.org/projects/zathura/"
 
-if [[ ${PV} == *9999 ]]; then
-	inherit git-r3
-	EGIT_REPO_URI="https://git.pwmt.org/pwmt/${PN}.git"
-	EGIT_BRANCH="develop"
-else
-	SRC_URI="https://pwmt.org/projects/zathura/download/${P}.tar.xz"
-	KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
-fi
-
 LICENSE="ZLIB"
 SLOT="0"
-IUSE="+magic seccomp sqlite synctex test"
+IUSE="+magic sqlite synctex test"
 
-RDEPEND="dev-libs/appstream
-	>=dev-libs/girara-0.3.1
-	>=dev-libs/glib-2.50:2
-	dev-util/desktop-file-utils
-	dev-python/sphinx
-	x11-libs/cairo
-	>=x11-libs/gtk+-3.22:3
-	magic? ( sys-apps/file )
-	seccomp? ( sys-libs/libseccomp )
-	sqlite? ( >=dev-db/sqlite-3.5.9:3 )
-	synctex? ( app-text/texlive-core )"
-
+RDEPEND=">=dev-libs/girara-0.2.7:3=
+	>=dev-libs/glib-2.32:2=
+	x11-libs/cairo:=
+	>=x11-libs/gtk+-3.6:3
+	magic? ( sys-apps/file:= )
+	sqlite? ( dev-db/sqlite:3= )
+	synctex? ( >=app-text/texlive-core-2015 )"
 DEPEND="${RDEPEND}
+	sys-devel/gettext
+	virtual/pkgconfig
 	test? ( dev-libs/check )"
 
-BDEPEND="virtual/pkgconfig"
-
 src_configure() {
-	local emesonargs=(
-		--libdir=/usr/$(get_libdir)
-		-Denable-magic=$(usex magic true false)
-		-Denable-seccomp=$(usex seccomp true false)
-		-Denable-sqlite=$(usex sqlite true false)
-		-Denable-synctex=$(usex synctex true false)
-		)
-	meson_src_configure
+	myzathuraconf=(
+		WITH_MAGIC=$(usex magic 1 0)
+		WITH_SQLITE=$(usex sqlite 1 0)
+		WITH_SYNCTEX=$(usex synctex 1 0)
+		PREFIX="${EPREFIX}"/usr
+		LIBDIR='${PREFIX}'/$(get_libdir)
+		CC="$(tc-getCC)"
+		SFLAGS=''
+		VERBOSE=1
+		DESTDIR="${D}"
+	)
+}
+
+src_compile() {
+	emake "${myzathuraconf[@]}"
 }
 
 src_test() {
-	virtx meson_src_test
+	Xemake "${myzathuraconf[@]}" test
+}
+
+src_install() {
+	emake "${myzathuraconf[@]}" install
+	dodoc AUTHORS
 }
 
 pkg_postinst() {
-	gnome2_icon_cache_update
 	xdg_desktop_database_update
 }
 
 pkg_postrm() {
-	gnome2_icon_cache_update
 	xdg_desktop_database_update
 }

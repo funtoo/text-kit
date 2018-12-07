@@ -1,31 +1,48 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=6
 
-inherit meson
+inherit eutils toolchain-funcs xdg
 
 if [[ ${PV} == *9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://git.pwmt.org/pwmt/zathura-ps.git"
 	EGIT_BRANCH="develop"
 else
-	KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
-	SRC_URI="https://pwmt.org/projects/zathura/plugins/download/${P}.tar.xz"
+	KEYWORDS=""
+	SRC_URI="http://pwmt.org/projects/zathura/plugins/download/${P}.tar.gz"
 fi
 
 DESCRIPTION="PostScript plug-in for zathura"
-HOMEPAGE="https://pwmt.org/projects/zathura-ps/download/"
+HOMEPAGE="http://pwmt.org/projects/zathura/"
 
 LICENSE="ZLIB"
 SLOT="0"
+IUSE=""
 
-DEPEND="app-text/libspectre
-	>=app-text/zathura-0.3.9
-	dev-libs/girara
-	dev-libs/glib:2
-	x11-libs/cairo"
+RDEPEND=">=app-text/libspectre-0.2.6:=
+	>=app-text/zathura-0.3.8
+	dev-libs/glib:2=
+	x11-libs/cairo:="
+DEPEND="${RDEPEND}
+	virtual/pkgconfig"
 
-RDEPEND="${DEPEND}"
+src_configure() {
+	myzathuraconf=(
+		CC="$(tc-getCC)"
+		LD="$(tc-getLD)"
+		VERBOSE=1
+		DESTDIR="${D}"
+		PREFIX="${EPREFIX}/usr"
+	)
+}
 
-BDEPEND="virtual/pkgconfig"
+src_compile() {
+	emake "${myzathuraconf[@]}"
+}
+
+src_install() {
+	emake "${myzathuraconf[@]}" install
+	dodoc AUTHORS
+}
