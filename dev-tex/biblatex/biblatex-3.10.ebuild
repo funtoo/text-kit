@@ -1,7 +1,7 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit latex-package
 
@@ -11,25 +11,30 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tds.tgz"
 
 LICENSE="LPPL-1.3"
 SLOT="0"
-KEYWORDS="amd64 ~arm ~x86"
-IUSE="doc examples"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
+IUSE="+biber doc examples"
 
-RDEPEND="dev-texlive/texlive-bibtexextra
+DEPEND="dev-texlive/texlive-bibtexextra
 	dev-texlive/texlive-latexextra
 	dev-texlive/texlive-plaingeneric"
-DEPEND="${RDEPEND}"
+RDEPEND="${DEPEND}"
+PDEPEND="biber? ( ~dev-tex/biber-2.10 )"
 
-S=${WORKDIR}
+S="${WORKDIR}"
 TEXMF=/usr/share/texmf-site
 
 src_install() {
 	insinto "${TEXMF}"
 	doins -r bibtex tex
 
-	dodoc doc/latex/biblatex/{README,CHANGES}
-	use doc && { pushd doc/ ; latex-package_src_doinstall doc ; popd ; }
+	dodoc doc/latex/biblatex/{README,CHANGES.md}
+	if use doc ; then
+		pushd doc || die
+		latex-package_src_doinstall doc
+		popd || die
+	fi
+
 	if use examples ; then
-		docinto examples
 		dodoc -r doc/latex/biblatex/examples
 	fi
 }
