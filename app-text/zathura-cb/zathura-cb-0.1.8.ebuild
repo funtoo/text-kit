@@ -7,21 +7,20 @@ inherit meson
 
 if [[ ${PV} == *9999 ]]; then
 	inherit git-r3
-	EGIT_REPO_URI="https://git.pwmt.org/pwmt/zathura-ps.git"
+	EGIT_REPO_URI="https://git.pwmt.org/pwmt/zathura-cb.git"
 	EGIT_BRANCH="develop"
 else
-	KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
+	KEYWORDS="amd64 ~arm ~x86"
 	SRC_URI="https://pwmt.org/projects/zathura/plugins/download/${P}.tar.xz"
 fi
 
-DESCRIPTION="PostScript plug-in for zathura"
-HOMEPAGE="https://pwmt.org/projects/zathura-ps/download/"
+DESCRIPTION="Comic book plug-in for zathura with 7zip, rar, tar and zip support"
+HOMEPAGE="https://pwmt.org/projects/zathura-cb/"
 
 LICENSE="ZLIB"
 SLOT="0"
 
-DEPEND="app-text/libspectre
-	>=app-text/zathura-0.3.9
+DEPEND=">=app-text/zathura-0.3.9
 	dev-libs/girara
 	dev-libs/glib:2
 	x11-libs/cairo"

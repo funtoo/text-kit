@@ -1,7 +1,7 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit eutils multilib toolchain-funcs virtualx xdg-utils
 
@@ -21,7 +21,7 @@ LICENSE="ZLIB"
 SLOT="0"
 IUSE="+magic sqlite synctex test"
 
-RDEPEND=">=dev-libs/girara-0.2.7:3=
+RDEPEND=">=dev-libs/girara-0.2.8:=
 	>=dev-libs/glib-2.32:2=
 	x11-libs/cairo:=
 	>=x11-libs/gtk+-3.6:3
@@ -32,12 +32,6 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext
 	virtual/pkgconfig
 	test? ( dev-libs/check )"
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-tests.patch
-
-	epatch_user
-}
 
 src_configure() {
 	myzathuraconf=(
@@ -58,7 +52,7 @@ src_compile() {
 }
 
 src_test() {
-	Xemake "${myzathuraconf[@]}" test
+	virtx emake "${myzathuraconf[@]}" test
 }
 
 src_install() {

@@ -1,11 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
-inherit eutils perl-module
-
-MY_PN=biblatex-${PN}
+inherit perl-module
 
 DESCRIPTION="A BibTeX replacement for users of biblatex"
 HOMEPAGE="http://biblatex-biber.sourceforge.net/ https://github.com/plk/biber/"
@@ -59,17 +57,19 @@ DEPEND="${RDEPEND}
 	test? ( dev-perl/File-Which
 			dev-perl/Test-Differences
 			dev-perl/Test-Pod
-			dev-perl/Test-Pod-Coverage )"
+			dev-perl/Test-Pod-Coverage
+			~virtual/perl-Unicode-Collate-1.140.0 )"
 
 SRC_TEST="parallel"
 
-src_prepare(){
-	epatch "${FILESDIR}"/${PN}-2.4-drop-mozilla-ca.patch
-}
+PATCHES=(
+	"${FILESDIR}"/${PN}-2.4-drop-mozilla-ca.patch
+	"${FILESDIR}"/${PN}-2.5-unescaped-left-brace-in-regex.patch
+	)
 
 src_install(){
 	perl-module_src_install
-	use doc && dodoc -r doc/*
+	use doc && dodoc -r doc
 }
 
 src_test() {

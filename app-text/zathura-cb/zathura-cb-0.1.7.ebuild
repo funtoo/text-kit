@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
-inherit eutils toolchain-funcs readme.gentoo-r1
+inherit eutils toolchain-funcs readme.gentoo-r1 xdg
 
 if [[ ${PV} == *9999 ]]; then
 	inherit git-r3
@@ -11,17 +11,17 @@ if [[ ${PV} == *9999 ]]; then
 	EGIT_BRANCH="develop"
 else
 	KEYWORDS="amd64 arm x86"
-	SRC_URI="http://pwmt.org/projects/zathura/plugins/download/${P}.tar.gz"
+	SRC_URI="https://pwmt.org/projects/zathura/plugins/download/${P}.tar.gz"
 fi
 
 DESCRIPTION="Comic book plug-in for zathura with 7zip, rar, tar and zip support"
-HOMEPAGE="http://pwmt.org/projects/zathura/"
+HOMEPAGE="https://pwmt.org/projects/zathura/"
 
 LICENSE="ZLIB"
 SLOT="0"
 IUSE=""
 
-RDEPEND=">=app-text/zathura-0.3.1
+RDEPEND=">=app-text/zathura-0.3.8
 	dev-libs/glib:2=
 	app-arch/libarchive:=
 	x11-libs/cairo:=
@@ -53,5 +53,6 @@ src_install() {
 }
 
 pkg_postinst() {
+	xdg_pkg_postinst
 	readme.gentoo_print_elog
 }
