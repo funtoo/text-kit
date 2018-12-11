@@ -4,8 +4,8 @@
 EAPI=5
 
 #TL_UPSTREAM_PATCHLEVEL="1"
-PATCHLEVEL="65.1"
-TL_SOURCE_VERSION=20160523
+PATCHLEVEL="68"
+TL_SOURCE_VERSION=20170524
 
 inherit eutils flag-o-matic toolchain-funcs libtool texlive-common
 
@@ -19,8 +19,7 @@ LICENSE="GPL-2 LPPL-1.3c TeX"
 SRC_URI="mirror://gentoo/${MY_PV}.tar.xz"
 
 # Fetch patches
-SRC_URI="${SRC_URI} mirror://gentoo/${PN}-patches-${PATCHLEVEL}.tar.xz"
-#	mirror://gentoo/texlive-core-upstream-patches-${TL_UPSTREAM_PATCHLEVEL}.tar.xz"
+SRC_URI="${SRC_URI} mirror://gentoo/${PN}-patches-${PATCHLEVEL}.tar.xz https://dev.gentoo.org/~dilfridge/distfiles/${PN%-core}-${TL_SOURCE_VERSION}-source-freetype.patch.xz"
 
 TL_CORE_BINEXTRA_MODULES="
 	a2ping adhocfilelist arara asymptote bundledoc checklistings ctan_chk
@@ -74,7 +73,7 @@ for i in ${TL_CORE_EXTRA_SRC_MODULES}; do
 done
 SRC_URI="${SRC_URI} )"
 
-KEYWORDS="~alpha amd64 arm ~arm64 ~hppa ia64 ~mips ~ppc ~ppc64 ~s390 ~sh sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
 IUSE="cjk X doc source tk +luajittex xetex"
 
 TEXMF_PATH=/usr/share/texmf-dist
@@ -98,23 +97,24 @@ COMMON_DEPEND="${MODULAR_X_DEPEND}
 	!app-text/xdvipdfmx
 	sys-libs/zlib
 	>=media-libs/libpng-1.2.43-r2:0=
-	>=app-text/poppler-0.58.0:=
+	>=app-text/poppler-0.12.3-r3:=
+	<app-text/poppler-0.58.0
 	>=x11-libs/cairo-1.12
 	>=x11-libs/pixman-0.18
 	dev-libs/zziplib
 	app-text/libpaper
 	dev-libs/gmp:0
-	dev-libs/mpfr:0
+	dev-libs/mpfr:0=
 	xetex? (
-		>=media-libs/harfbuzz-0.9.20[icu,graphite]
+		>=media-libs/harfbuzz-1.4.5[icu,graphite]
 		>=dev-libs/icu-50:=
 		>=app-text/teckit-2.5.3
 		media-libs/fontconfig
 		media-gfx/graphite2
 	)
 	media-libs/freetype:2
-	>=dev-libs/kpathsea-6.2.1
-	cjk? ( >=dev-libs/ptexenc-1.3.4_p20160523 )"
+	>=dev-libs/kpathsea-6.2.3
+	cjk? ( >=dev-libs/ptexenc-1.3.5 )"
 
 DEPEND="${COMMON_DEPEND}
 	virtual/pkgconfig
@@ -123,9 +123,9 @@ DEPEND="${COMMON_DEPEND}
 	app-arch/xz-utils"
 
 RDEPEND="${COMMON_DEPEND}
-	>=app-text/ps2pkm-1.8_p20160523
-	>=app-text/dvipsk-5.996_p20160523
-	>=dev-tex/bibtexu-3.71_p20160523
+	>=app-text/ps2pkm-1.8_p20170524
+	>=app-text/dvipsk-5.997
+	>=dev-tex/bibtexu-3.71_p20170524
 	virtual/perl-Getopt-Long
 	tk? ( dev-perl/Tk )"
 
@@ -154,6 +154,9 @@ src_prepare() {
 	mv "${WORKDIR}"/texmf* "${B}" || die "failed to move texmf files"
 
 	cd "${B}"
+	# bug 655052  FL-5991
+	epatch "${WORKDIR}/${PN%-core}-${TL_SOURCE_VERSION}-source-freetype.patch"
+
 	#EPATCH_MULTI_MSG="Applying patches from upstream bugfix branch..." EPATCH_SUFFIX="patch" epatch "${WORKDIR}/gentoo_branch2011_patches"
 	EPATCH_SUFFIX="patch" epatch "${WORKDIR}/patches"
 
@@ -337,6 +340,9 @@ src_install() {
 
 pkg_postinst() {
 	etexmf-update
+
+	einfo "Regenerating TeX formats"
+	fmtutil-sys --all &> /dev/null
 
 	elog
 	elog "If you have configuration files in ${EPREFIX}/etc/texmf to merge,"
