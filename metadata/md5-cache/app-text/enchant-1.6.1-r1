@@ -1,4 +1,4 @@
-DEFINED_PHASES=configure install
+DEFINED_PHASES=configure install prepare
 DEPEND=>=dev-libs/glib-2.6:2 aspell? ( app-text/aspell ) hunspell? ( >=app-text/hunspell-1.2.1:0= ) virtual/pkgconfig
 DESCRIPTION=Spellchecker wrapping library
 EAPI=6
@@ -8,7 +8,7 @@ KEYWORDS=*
 LICENSE=LGPL-2.1
 RDEPEND=>=dev-libs/glib-2.6:2 aspell? ( app-text/aspell ) hunspell? ( >=app-text/hunspell-1.2.1:0= )
 REQUIRED_USE=|| ( hunspell aspell )
-RESTRICT=test
-SLOT=0/2
-SRC_URI=https://github.com/AbiWord/enchant/releases/download/v2.2.1/enchant-2.2.1.tar.gz
-_md5_=7c42f9bccbb91e7edfb4dd3938c276ac
+SLOT=0
+SRC_URI=https://github.com/AbiWord/enchant/releases/download/enchant-1-6-1/enchant-1.6.1.tar.gz
+_eclasses_=estack	43ddf5aaffa7a8d0482df54d25a66a1f	versionator	2352c3fc97241f6a02042773c8287748
+_md5_=9530c2208d19783e95d8c59b5a0fe6ca
