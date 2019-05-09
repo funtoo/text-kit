@@ -28,11 +28,6 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/texlive-${PV#*_p}-source/texk/${PN}
 
-pkg_setup() {
-	export CFLAGS="${CFLAGS} -I/usr/include/freetype2"
-	export LIBS="${LIBS} -lfreetype"
-}
-
 src_configure() {
 	econf --with-system-kpathsea \
 		--with-system-freetype2 \

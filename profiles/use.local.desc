@@ -45,7 +45,6 @@ app-text/enchant:aspell - Adds support for app-text/aspell spell checker
 app-text/enchant:hunspell - Adds support for app-text/hunspell spell checker
 app-text/getxbook:ocr - Use app-text/tesseract for optical character recognition
 app-text/ghostscript-gpl:unicode - Add support for unicode passwords via net-dns/libidn
-app-text/glark:zip - Support for ZIP files using dev-ruby/rubyzip
 app-text/groonga:abort - Enable query abortion
 app-text/groonga:benchmark - Build benchmark programs
 app-text/groonga:dynamic-malloc-change - Allow dynamic memory allocation change for testing
@@ -91,6 +90,7 @@ app-text/podofo:tools - Build and install commandline tools.
 app-text/qpdf:perl - Install fix-qdf tool (for reverting PDF edits) written in perl
 app-text/qpdfview:fitz - Use experimental fitz rendering, provided by app-text/mupdf, instead of poppler
 app-text/qpdfview:synctex - Add support for searching TeX sources
+app-text/robodoc:examples - Installs usage examples in /usr/share for Perl
 app-text/sdcv:darkterm - Improve readability of color output on terminals with dark background.
 app-text/sgmltools-lite:jadetex - Add support for app-text/jadetex (for processing tex files produced by the TeX backend of Jade)
 app-text/stardict:advertisement - Enable stardict advertisements plugin
@@ -138,6 +138,8 @@ app-text/texlive:tex4ht - Add support for dev-tex/tex4ht (for converting (La)TeX
 app-text/texlive:texi2html - Add support for app-text/texi2html which converts texi files to HTML
 app-text/texlive:xetex - Add support for XeTeX macros (dev-texlive/texlive-xetex)
 app-text/texlive:xindy - Add support for app-text/xindy, a flexible indexing system
+app-text/texlive-core:luajittex - Add support for LuaJitTeX: LuaTeX based on LuaJIT which is usually faster.
+app-text/texlive-core:xetex - Add support for XeTeX: a TeX system with Unicode and modern font technologies.
 app-text/wdiff:experimental - Build experimental utilities (mdiff, unify, wdiff2)
 app-text/webgen:builder - Enable programmatic HTML/XML generation
 app-text/webgen:highlight - Enable syntax highlighting for certain plugins
@@ -157,6 +159,13 @@ app-text/writerperfect:wpg - Add support for wpg format using app-text/libwpg
 app-text/writerperfect:wps - Add support for wps format using app-text/libwps
 app-text/wv:tools - Install optional utilities considered deprecated in favor of using AbiWord.
 app-text/xmlto:text - Support conversion from XML to plain text
+app-text/xpdf:cmyk - Include support for CMYK rasterization
+app-text/xpdf:i18n - Enable support non-UTF8 national charsets
+app-text/xpdf:libpaper - Use app-text/libpaper to get paper preferences
+app-text/xpdf:metric - Use A4 instead of US Letter paper size by default for PostScript output. This option has effect only if libpaper USE flag is disabled
+app-text/xpdf:opi - Include support for OPI (Open Prepress Interface) comments
+app-text/xpdf:textselect - Allow text selection
+app-text/xpdf:utils - Install command-line PDF converters and various utilities
 app-text/zathura:magic - Use libmagic to determine mimetypes
 app-text/zathura:synctex - Use libsynctex to get latex codeline from pdf
 app-text/zathura-meta:cb - Install plug-in for ComicBook support
