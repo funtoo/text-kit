@@ -7,6 +7,6 @@ LICENSE=master-pdf-editor
 RDEPEND=>=dev-qt/qtcore-5.4.1:5 >=dev-qt/qtgui-5.4.1:5 >=dev-qt/qtnetwork-5.4.1:5 >=dev-qt/qtprintsupport-5.4.1:5 >=dev-qt/qtsvg-5.4.1:5 >=media-gfx/sane-backends-1.0
 RESTRICT=mirror
 SLOT=0
-SRC_URI=https://code-industry.net/public/master-pdf-editor-5.4.10_qt5.amd64.tar.gz
+SRC_URI=https://code-industry.net/public/master-pdf-editor-5.4.20-qt5.amd64.tar.gz
 _eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	xdg-utils	14d00d009167652b1fa363e55effe213
-_md5_=a8c4781a6543ae620a2455dba82a8e67
+_md5_=4bbdac40d8aaaf72d4a026e4c661827b
