@@ -7,7 +7,7 @@ inherit desktop xdg-utils
 
 DESCRIPTION="A complete solution for viewing and editing PDF files"
 HOMEPAGE="https://code-industry.net/free-pdf-editor/"
-SRC_URI="https://code-industry.net/public/${P}_qt5.amd64.tar.gz"
+SRC_URI="https://code-industry.net/public/${P}-qt5.amd64.tar.gz"
 
 LICENSE="master-pdf-editor"
 SLOT="0"
@@ -48,3 +48,4 @@ pkg_postinst() {
 pkg_postrm() {
 	xdg_desktop_database_update
 }
+
