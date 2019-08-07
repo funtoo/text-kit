@@ -2,23 +2,20 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-PYTHON_COMPAT=( python{2_7,3_5,3_6} )
+PYTHON_COMPAT=( python{2_7,3_5,3_6,3_7} )
 
-inherit distutils-r1 git-r3
+inherit distutils-r1
 
 DESCRIPTION="A tool to generate a static blog, with restructured text or markdown input files"
 HOMEPAGE="https://blog.getpelican.com/ https://pypi.org/project/pelican/"
-EGIT_REPO_URI="https://github.com/getpelican/pelican.git"
-EGIT_CHECKOUT_DIR="${WORKDIR}/${P}"
+SRC_URI="https://github.com/getpelican/pelican/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="doc examples markdown test"
-# Tests fail for this release but are fixed upstream
-RESTRICT="test"
 
-DEPEND=">=dev-python/feedgenerator-1.6[${PYTHON_USEDEP}]
+DEPEND=">=dev-python/feedgenerator-1.9[${PYTHON_USEDEP}]
 	>=dev-python/jinja-2.7[${PYTHON_USEDEP}]
 	dev-python/docutils[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
@@ -34,6 +31,7 @@ DEPEND=">=dev-python/feedgenerator-1.6[${PYTHON_USEDEP}]
 		dev-python/markdown[${PYTHON_USEDEP}]
 	)"
 RDEPEND=""
+RESTRICT="test"
 
 DOCS=( README.rst )
 
