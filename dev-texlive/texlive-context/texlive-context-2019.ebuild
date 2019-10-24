@@ -22,7 +22,7 @@ DEPEND=">=dev-texlive/texlive-basic-2019
 "
 RDEPEND="${DEPEND} dev-lang/ruby"
 
-TL_CONTEXT_UNIX_STUBS="contextjit mtxrunjit mtxrun texexec texmfstart"
+TL_CONTEXT_UNIX_STUBS="context contextjit luatools mtxrunjit mtxrun texexec texmfstart"
 
 TEXLIVE_MODULE_BINSCRIPTS=""
 
@@ -48,6 +48,19 @@ src_prepare() {
 	rm -rf texmf-dist/scripts/context/stubs/{mswin,win64} || die
 
 	default
+}
+
+src_install() {
+	dodir /etc/env.d
+	echo "TEXMFDIST=/usr/share/texmf-dist" >> "${ED}"/etc/env.d/99context || die
+
+	texlive-module_src_install
+}
+
+pkg_postinst() {
+	ewarn "Remember to run: env-update && source /etc/profile if you plan"
+	ewarn "to use these tools in a shell before logging out (or restarting"
+	ewarn "your login manager)"
 }
 
 TL_MODULE_INFORMATION="For using ConTeXt mkII simply use 'texexec' to generate
