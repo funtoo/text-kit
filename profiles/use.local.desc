@@ -175,5 +175,6 @@ dev-tex/dot2texi:pgf - Enable support for dev-tex/pgf (The TeX Portable Graphic 
 dev-tex/dot2texi:pstricks - Enable pstricks support
 dev-tex/pythontex:highlighting - Syntax highlighting using dev-python/pygments
 dev-texlive/texlive-basic:luajittex - Add support for LuaJitTeX: LuaTeX based on LuaJIT which is usually faster.
+sys-apps/ripgrep:man - Build and install man pages.
 virtual/podofo-build:boost - Add support for boost
 virtual/podofo-build:tools - Build and install commandline tools.
