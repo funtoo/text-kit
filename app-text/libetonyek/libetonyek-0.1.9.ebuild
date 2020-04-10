@@ -46,7 +46,9 @@ src_configure() {
 		$(use_enable static-libs static)
 		$(use_enable test tests)
 	)
-	if has_version ">=dev-util/mdds-1.4"; then
+	if has_version ">=dev-util/mdds-1.5"; then
+		myeconfargs+=( --with-mdds=1.5 )
+	elif has_version ">=dev-util/mdds-1.4"; then
 		myeconfargs+=( --with-mdds=1.4 )
 	else
 		myeconfargs+=( --with-mdds=1.2 )
