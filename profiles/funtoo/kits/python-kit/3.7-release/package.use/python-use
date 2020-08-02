@@ -5,7 +5,6 @@
 app-dicts/opendict python_single_target_python2_7
 app-doc/gimp-help python_single_target_python2_7
 app-text/bibus python_single_target_python2_7
-app-text/calibre python_single_target_python2_7
 app-text/cherrytree python_single_target_python2_7
 app-text/dblatex python_single_target_python2_7
 app-text/djvusmooth python_single_target_python2_7
