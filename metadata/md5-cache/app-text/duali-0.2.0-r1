@@ -3,7 +3,7 @@ DEPEND=python_single_target_python2_7? ( >=dev-lang/python-2.7.5-r2:2.7[gdbm] >=
 DESCRIPTION=Arabic dictionary based on the DICT protocol
 EAPI=6
 HOMEPAGE=https://www.arabeyes.org/Duali
-IUSE=python_targets_python2_7
+IUSE=python_single_target_python2_7 python_targets_python2_7
 KEYWORDS=alpha amd64 ~hppa ~ia64 ~mips ~ppc ~sparc x86
 LICENSE=BSD
 PDEPEND=>=app-dicts/duali-data-0.1b-r1
@@ -11,5 +11,5 @@ RDEPEND=python_single_target_python2_7? ( >=dev-lang/python-2.7.5-r2:2.7[gdbm] >
 REQUIRED_USE=^^ ( python_single_target_python2_7 )
 SLOT=0
 SRC_URI=mirror://sourceforge/arabeyes/duali-0.2.0.tar.bz2
-_eclasses_=multilib	1d91b03d42ab6308b5f4f6b598ed110e	python-single-r1	a811e2c445a5fb40db1a1eba728dca7f	python-utils-r1	263e4bbfa6a84be6dc6272a6702aedca	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529
+_eclasses_=multilib	1d91b03d42ab6308b5f4f6b598ed110e	python-single-r1	ce99dfba1cad0514af51a32b2b6964af	python-utils-r1	263e4bbfa6a84be6dc6272a6702aedca	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529
 _md5_=29aefd2543659c26ce8e83ed90d4a534
