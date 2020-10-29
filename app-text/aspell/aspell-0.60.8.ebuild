@@ -1,7 +1,6 @@
-# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit autotools flag-o-matic libtool toolchain-funcs
 
@@ -17,7 +16,7 @@ fi
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm arm64 hppa ia64 ~m68k ~mips ppc ppc64 s390 ~sh sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x86-solaris"
+KEYWORDS="*"
 IUSE="nls unicode"
 
 PDEPEND="app-dicts/aspell-en"
@@ -40,7 +39,8 @@ RDEPEND="
 	nls? ( virtual/libintl )
 	!=app-dicts/aspell-en-0.5*
 "
-DEPEND="${RDEPEND}
+DEPEND="${RDEPEND}"
+BDEPEND="
 	virtual/pkgconfig
 	nls? ( sys-devel/gettext )
 "
@@ -77,11 +77,13 @@ src_prepare() {
 }
 
 src_configure() {
-	econf \
-		$(use_enable nls) \
-		$(use_enable unicode) \
-		--disable-static \
+	local myeconfargs=(
+		$(use_enable nls)
+		$(use_enable unicode)
+		--disable-static
 		--sysconfdir="${EPREFIX}"/etc/aspell
+	)
+	econf "${myeconfargs[@]}"
 }
 
 src_install() {
@@ -96,5 +98,5 @@ src_install() {
 
 	# we explicitly pass '--disable-static' to econf,
 	# hence we can delete .la files unconditionally
-	find "${D}" -name '*.la' -delete || die
+	find "${ED}" -type f -name '*.la' -delete || die
 }
