@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 
-import json
 import toml
+
+
+def get_release(releases_data):
+	releases = list(filter(lambda x: x["prerelease"] is False and x["draft"] is False, releases_data))
+	return None if not releases else sorted(releases, key=lambda x: x["tag_name"]).pop()
 
 
 async def get_crates_artifacts(hub, github_user, github_repo, crate_name, version):
@@ -22,32 +26,25 @@ async def get_crates_artifacts(hub, github_user, github_repo, crate_name, versio
 
 
 async def generate(hub, **pkginfo):
-	github_user = "BurntSushi"
-	github_repo = pkginfo["name"]
+	github_user = "phiresky"
+	github_repo = "ripgrep-all"
 	crate_name = pkginfo["name"]
 	json_list = await hub.pkgtools.fetch.get_page(
 		f"https://api.github.com/repos/{github_user}/{github_repo}/releases", is_json=True
 	)
-	for release in json_list:
-		if release["prerelease"] or release["draft"]:
-			continue
-		version = release["tag_name"]
-		url = release["tarball_url"]
-		break
-	final_name = f'{pkginfo["name"]}-{version}.tar.gz'
+	latest_release = get_release(json_list)
+	if latest_release is None:
+		raise hub.pkgtools.ebuild.BreezyError(f"Can't find a suitable release of {github_repo}")
+	version = latest_release["tag_name"]
+	url = latest_release["tarball_url"]
+	final_name = f'{crate_name}-{version}.tar.gz'
 	artifacts = await get_crates_artifacts(hub, github_user, github_repo, crate_name, version)
 	ebuild = hub.pkgtools.ebuild.BreezyBuild(
 		**pkginfo,
-		version=version,
+		version=version.lstrip("v"),
 		crates=artifacts["crates"],
 		github_user=github_user,
 		github_repo=github_repo,
-		artifacts=[
-			hub.pkgtools.ebuild.Artifact(url=url, final_name=final_name),
-			*artifacts["crates_artifacts"],
-		],
+		artifacts=[hub.pkgtools.ebuild.Artifact(url=url, final_name=final_name), *artifacts["crates_artifacts"],],
 	)
 	ebuild.push()
-
-
-# vim: ts=4 sw=4 noet
