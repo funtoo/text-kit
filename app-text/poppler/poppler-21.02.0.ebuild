@@ -55,6 +55,11 @@ PATCHES=(
 	"${FILESDIR}/${PN}-0.57.0-disable-internal-jpx.patch"
 )
 
+src_unpack() {
+	unpack $A
+	mv ${WORKDIR}/freedesktop-poppler-* ${S} || die
+}
+
 src_prepare() {
 	cmake_src_prepare
 
