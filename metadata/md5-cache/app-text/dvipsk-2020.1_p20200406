@@ -1,0 +1,13 @@
+BDEPEND=virtual/pkgconfig
+DEFINED_PHASES=configure install postinst postrm
+DEPEND=>=dev-libs/kpathsea-6.2.1
+DESCRIPTION=DVI-to-PostScript translator
+EAPI=7
+HOMEPAGE=http://tug.org/texlive/
+IUSE=doc source
+KEYWORDS=*
+LICENSE=GPL-2
+SLOT=0
+SRC_URI=mirror://gentoo/texlive-20200406-source.tar.xz mirror://gentoo/tl-dvips-2020.tar.xz doc? ( mirror://gentoo/tl-dvips.doc-2020.tar.xz )
+_eclasses_=texlive-common	9e2ec6f6212b1eed3c02777654057d2b
+_md5_=cb9be27ad0a80bee1095c3a8cd1e3355
