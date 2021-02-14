@@ -1,0 +1,14 @@
+BDEPEND=>=app-text/texlive-core-2020 app-arch/xz-utils
+DEFINED_PHASES=compile install postinst postrm unpack
+DEPEND=>=dev-texlive/texlive-basic-2020
+DESCRIPTION=TeXLive Greek
+EAPI=7
+HOMEPAGE=http://www.tug.org/texlive/
+IUSE=source doc
+KEYWORDS=*
+LICENSE=GPL-1 GPL-2 LGPL-3 LPPL-1.3 LPPL-1.3c public-domain TeX-other-free
+RDEPEND=>=dev-texlive/texlive-basic-2020 >=app-text/texlive-core-2020
+SLOT=0
+SRC_URI=mirror://gentoo/tl-babel-greek-2020.tar.xz mirror://gentoo/tl-begingreek-2020.tar.xz mirror://gentoo/tl-betababel-2020.tar.xz mirror://gentoo/tl-cbfonts-2020.tar.xz mirror://gentoo/tl-cbfonts-fd-2020.tar.xz mirror://gentoo/tl-gfsbaskerville-2020.tar.xz mirror://gentoo/tl-gfsporson-2020.tar.xz mirror://gentoo/tl-greek-fontenc-2020.tar.xz mirror://gentoo/tl-greek-inputenc-2020.tar.xz mirror://gentoo/tl-greekdates-2020.tar.xz mirror://gentoo/tl-greektex-2020.tar.xz mirror://gentoo/tl-greektonoi-2020.tar.xz mirror://gentoo/tl-hyphen-greek-2020.tar.xz mirror://gentoo/tl-hyphen-ancientgreek-2020.tar.xz mirror://gentoo/tl-ibycus-babel-2020.tar.xz mirror://gentoo/tl-ibygrk-2020.tar.xz mirror://gentoo/tl-kerkis-2020.tar.xz mirror://gentoo/tl-levy-2020.tar.xz mirror://gentoo/tl-lgreek-2020.tar.xz mirror://gentoo/tl-mkgrkindex-2020.tar.xz mirror://gentoo/tl-teubner-2020.tar.xz mirror://gentoo/tl-xgreek-2020.tar.xz mirror://gentoo/tl-yannisgr-2020.tar.xz mirror://gentoo/tl-collection-langgreek-2020.tar.xz doc? ( mirror://gentoo/tl-babel-greek.doc-2020.tar.xz mirror://gentoo/tl-begingreek.doc-2020.tar.xz mirror://gentoo/tl-betababel.doc-2020.tar.xz mirror://gentoo/tl-cbfonts.doc-2020.tar.xz mirror://gentoo/tl-cbfonts-fd.doc-2020.tar.xz mirror://gentoo/tl-gfsbaskerville.doc-2020.tar.xz mirror://gentoo/tl-gfsporson.doc-2020.tar.xz mirror://gentoo/tl-greek-fontenc.doc-2020.tar.xz mirror://gentoo/tl-greek-inputenc.doc-2020.tar.xz mirror://gentoo/tl-greekdates.doc-2020.tar.xz mirror://gentoo/tl-greektex.doc-2020.tar.xz mirror://gentoo/tl-greektonoi.doc-2020.tar.xz mirror://gentoo/tl-hyphen-greek.doc-2020.tar.xz mirror://gentoo/tl-ibycus-babel.doc-2020.tar.xz mirror://gentoo/tl-ibygrk.doc-2020.tar.xz mirror://gentoo/tl-kerkis.doc-2020.tar.xz mirror://gentoo/tl-levy.doc-2020.tar.xz mirror://gentoo/tl-lgreek.doc-2020.tar.xz mirror://gentoo/tl-mkgrkindex.doc-2020.tar.xz mirror://gentoo/tl-teubner.doc-2020.tar.xz mirror://gentoo/tl-xgreek.doc-2020.tar.xz mirror://gentoo/tl-yannisgr.doc-2020.tar.xz ) source? ( mirror://gentoo/tl-babel-greek.source-2020.tar.xz mirror://gentoo/tl-begingreek.source-2020.tar.xz mirror://gentoo/tl-cbfonts-fd.source-2020.tar.xz mirror://gentoo/tl-greek-fontenc.source-2020.tar.xz mirror://gentoo/tl-greekdates.source-2020.tar.xz mirror://gentoo/tl-ibycus-babel.source-2020.tar.xz mirror://gentoo/tl-teubner.source-2020.tar.xz mirror://gentoo/tl-xgreek.source-2020.tar.xz )
+_eclasses_=texlive-common	9e2ec6f6212b1eed3c02777654057d2b	texlive-module	1523e53d8f178af947b9dfc978c3df5a
+_md5_=7eb62cd420f113547b6d175e487325e8

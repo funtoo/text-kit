@@ -1,0 +1,14 @@
+BDEPEND=>=app-text/texlive-core-2020 app-arch/xz-utils
+DEFINED_PHASES=compile install postinst postrm unpack
+DEPEND=>=dev-texlive/texlive-basic-2020
+DESCRIPTION=TeXLive Portuguese
+EAPI=7
+HOMEPAGE=http://www.tug.org/texlive/
+IUSE=source doc
+KEYWORDS=*
+LICENSE=GPL-1 GPL-2 GPL-2+
+RDEPEND=>=dev-texlive/texlive-basic-2020 >=app-text/texlive-core-2020
+SLOT=0
+SRC_URI=mirror://gentoo/tl-babel-portuges-2020.tar.xz mirror://gentoo/tl-beamer-tut-pt-2020.tar.xz mirror://gentoo/tl-cursolatex-2020.tar.xz mirror://gentoo/tl-feupphdteses-2020.tar.xz mirror://gentoo/tl-hyphen-portuguese-2020.tar.xz mirror://gentoo/tl-latex-via-exemplos-2020.tar.xz mirror://gentoo/tl-latexcheat-ptbr-2020.tar.xz mirror://gentoo/tl-lshort-portuguese-2020.tar.xz mirror://gentoo/tl-numberpt-2020.tar.xz mirror://gentoo/tl-ordinalpt-2020.tar.xz mirror://gentoo/tl-xypic-tut-pt-2020.tar.xz mirror://gentoo/tl-collection-langportuguese-2020.tar.xz doc? ( mirror://gentoo/tl-babel-portuges.doc-2020.tar.xz mirror://gentoo/tl-beamer-tut-pt.doc-2020.tar.xz mirror://gentoo/tl-cursolatex.doc-2020.tar.xz mirror://gentoo/tl-feupphdteses.doc-2020.tar.xz mirror://gentoo/tl-latex-via-exemplos.doc-2020.tar.xz mirror://gentoo/tl-latexcheat-ptbr.doc-2020.tar.xz mirror://gentoo/tl-lshort-portuguese.doc-2020.tar.xz mirror://gentoo/tl-numberpt.doc-2020.tar.xz mirror://gentoo/tl-ordinalpt.doc-2020.tar.xz mirror://gentoo/tl-xypic-tut-pt.doc-2020.tar.xz ) source? ( mirror://gentoo/tl-babel-portuges.source-2020.tar.xz mirror://gentoo/tl-numberpt.source-2020.tar.xz mirror://gentoo/tl-ordinalpt.source-2020.tar.xz )
+_eclasses_=texlive-common	9e2ec6f6212b1eed3c02777654057d2b	texlive-module	1523e53d8f178af947b9dfc978c3df5a
+_md5_=8f3dcfe895e9678580bb4f1be30901f4

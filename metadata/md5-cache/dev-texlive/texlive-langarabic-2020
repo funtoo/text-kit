@@ -1,0 +1,14 @@
+BDEPEND=>=app-text/texlive-core-2020 app-arch/xz-utils
+DEFINED_PHASES=compile install postinst postrm unpack
+DEPEND=>=dev-texlive/texlive-basic-2020
+DESCRIPTION=TeXLive Arabic
+EAPI=7
+HOMEPAGE=http://www.tug.org/texlive/
+IUSE=source doc
+KEYWORDS=*
+LICENSE=CC-BY-SA-4.0 GPL-2 GPL-3+ LPPL-1.3 LPPL-1.3c MIT
+RDEPEND=>=dev-texlive/texlive-basic-2020 >=app-text/texlive-core-2020
+SLOT=0
+SRC_URI=mirror://gentoo/tl-alkalami-2020.tar.xz mirror://gentoo/tl-alpha-persian-2020.tar.xz mirror://gentoo/tl-amiri-2020.tar.xz mirror://gentoo/tl-arabi-2020.tar.xz mirror://gentoo/tl-arabi-add-2020.tar.xz mirror://gentoo/tl-arabluatex-2020.tar.xz mirror://gentoo/tl-arabtex-2020.tar.xz mirror://gentoo/tl-bidi-2020.tar.xz mirror://gentoo/tl-bidihl-2020.tar.xz mirror://gentoo/tl-dad-2020.tar.xz mirror://gentoo/tl-ghab-2020.tar.xz mirror://gentoo/tl-hyphen-arabic-2020.tar.xz mirror://gentoo/tl-hyphen-farsi-2020.tar.xz mirror://gentoo/tl-imsproc-2020.tar.xz mirror://gentoo/tl-kurdishlipsum-2020.tar.xz mirror://gentoo/tl-lshort-persian-2020.tar.xz mirror://gentoo/tl-luabidi-2020.tar.xz mirror://gentoo/tl-na-box-2020.tar.xz mirror://gentoo/tl-persian-bib-2020.tar.xz mirror://gentoo/tl-sexam-2020.tar.xz mirror://gentoo/tl-simurgh-2020.tar.xz mirror://gentoo/tl-tram-2020.tar.xz mirror://gentoo/tl-xepersian-2020.tar.xz mirror://gentoo/tl-xepersian-hm-2020.tar.xz mirror://gentoo/tl-collection-langarabic-2020.tar.xz doc? ( mirror://gentoo/tl-alkalami.doc-2020.tar.xz mirror://gentoo/tl-alpha-persian.doc-2020.tar.xz mirror://gentoo/tl-amiri.doc-2020.tar.xz mirror://gentoo/tl-arabi.doc-2020.tar.xz mirror://gentoo/tl-arabi-add.doc-2020.tar.xz mirror://gentoo/tl-arabluatex.doc-2020.tar.xz mirror://gentoo/tl-arabtex.doc-2020.tar.xz mirror://gentoo/tl-bidi.doc-2020.tar.xz mirror://gentoo/tl-bidihl.doc-2020.tar.xz mirror://gentoo/tl-dad.doc-2020.tar.xz mirror://gentoo/tl-ghab.doc-2020.tar.xz mirror://gentoo/tl-imsproc.doc-2020.tar.xz mirror://gentoo/tl-kurdishlipsum.doc-2020.tar.xz mirror://gentoo/tl-lshort-persian.doc-2020.tar.xz mirror://gentoo/tl-luabidi.doc-2020.tar.xz mirror://gentoo/tl-na-box.doc-2020.tar.xz mirror://gentoo/tl-persian-bib.doc-2020.tar.xz mirror://gentoo/tl-sexam.doc-2020.tar.xz mirror://gentoo/tl-simurgh.doc-2020.tar.xz mirror://gentoo/tl-tram.doc-2020.tar.xz mirror://gentoo/tl-xepersian.doc-2020.tar.xz mirror://gentoo/tl-xepersian-hm.doc-2020.tar.xz ) source? ( mirror://gentoo/tl-arabluatex.source-2020.tar.xz mirror://gentoo/tl-bidi.source-2020.tar.xz mirror://gentoo/tl-xepersian.source-2020.tar.xz mirror://gentoo/tl-xepersian-hm.source-2020.tar.xz )
+_eclasses_=texlive-common	9e2ec6f6212b1eed3c02777654057d2b	texlive-module	1523e53d8f178af947b9dfc978c3df5a
+_md5_=f7c5f7023dd9a76a0fef1e37b40b4a7a
