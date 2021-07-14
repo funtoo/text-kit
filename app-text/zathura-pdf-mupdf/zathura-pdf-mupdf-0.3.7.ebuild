@@ -7,7 +7,7 @@ inherit meson xdg
 
 DESCRIPTION="PDF plug-in for zathura"
 HOMEPAGE="https://pwmt.org/projects/zathura-pdf-mupdf/"
-SRC_URI="https://pwmt.org/projects/zathura-pdf-mupdf/download/zathura-pdf-mupdf-0.3.6.tar.xz"
+SRC_URI="https://pwmt.org/projects/zathura-pdf-mupdf/download/zathura-pdf-mupdf-0.3.7.tar.xz"
 
 LICENSE="ZLIB"
 SLOT="0"
