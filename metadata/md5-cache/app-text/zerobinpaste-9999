@@ -1,11 +1,12 @@
 DEFINED_PHASES=install unpack
-DEPEND=net-libs/nodejs >=dev-vcs/git-1.8.2.1
+DEPEND=net-libs/nodejs >=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=Paste content of files or stdin to a 0bin site.
 EAPI=6
 HOMEPAGE=https://github.com/sametmax/0bin/
 KEYWORDS=~*
 LICENSE=WTFPL-2
+PROPERTIES=live
 RDEPEND=net-libs/nodejs
 SLOT=0
-_eclasses_=git-r3	18aed4252aebae08e3db185e684ee37c
+_eclasses_=git-r3	7dcb8a92f5a091f13e82494fa317ca4b
 _md5_=38c24d98bdf54584fc06399821f4a713

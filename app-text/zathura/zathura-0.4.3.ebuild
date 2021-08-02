@@ -14,7 +14,7 @@ if [[ ${PV} == *9999 ]]; then
 	EGIT_BRANCH="develop"
 else
 	SRC_URI="https://pwmt.org/projects/zathura/download/${P}.tar.xz"
-	KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
+	KEYWORDS="amd64 arm x86 ~amd64-linux ~x86-linux"
 fi
 
 LICENSE="ZLIB"
@@ -42,7 +42,6 @@ BDEPEND="doc? ( dev-python/sphinx )
 
 src_configure() {
 	local emesonargs=(
-		--libdir=/usr/$(get_libdir)
 		-Dconvert-icon=disabled
 		-Dmagic=$(usex magic enabled disabled)
 		-Dmanpages=$(usex doc enabled disabled)

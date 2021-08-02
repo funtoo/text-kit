@@ -12,7 +12,7 @@ SRC_URI="mirror://gimp/help/${P}.tar.bz2"
 
 LICENSE="FDL-1.2"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~hppa ia64 ppc ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 ~hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND="${PYTHON_DEPS}
@@ -23,4 +23,9 @@ DEPEND="${PYTHON_DEPS}
 
 src_configure() {
 	econf --without-gimp
+}
+
+src_compile() {
+	# see https://bugs.gentoo.org/677198
+	emake -j 1
 }

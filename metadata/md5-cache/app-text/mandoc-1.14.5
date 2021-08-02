@@ -1,0 +1,13 @@
+DEFINED_PHASES=prepare
+DEPEND=!static? ( sys-libs/zlib ) static? ( sys-libs/zlib[static-libs(+)] )
+DESCRIPTION=Suite of tools compiling mdoc and man
+EAPI=6
+HOMEPAGE=http://mdocml.bsd.lv/
+IUSE=static
+KEYWORDS=~amd64 ~x86
+LICENSE=ISC
+RDEPEND=!static? ( sys-libs/zlib )
+SLOT=0
+SRC_URI=http://mdocml.bsd.lv/snapshots/mandoc-1.14.5.tar.gz
+_eclasses_=multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=6253185ae24082db5b2c2ab22671625c

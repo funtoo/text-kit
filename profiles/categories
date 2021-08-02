@@ -1,6 +1,8 @@
 app-dicts
 app-doc
+app-i18n
 app-text
 dev-tex
 dev-texlive
+sys-apps
 virtual

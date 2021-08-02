@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -16,7 +16,7 @@ else
 	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x64-macos"
 fi
 
-LICENSE="CC-BY-SA-2.0"
+LICENSE="CC-BY-SA-3.0"
 SLOT="0"
 IUSE=""
 
@@ -55,12 +55,12 @@ src_install() {
 
 pkg_postinst() {
 	readme.gentoo_print_elog
-	if ! has_version app-portage/eclass-manpages; then
+	if ! has_version app-doc/eclass-manpages; then
 		elog "The offline version of the devmanual does not include the"
 		elog "documentation for the eclasses. If you need it, then emerge"
 		elog "the following package:"
 		elog
-		elog "app-portage/eclass-manpages"
+		elog "app-doc/eclass-manpages"
 		elog
 	fi
 }

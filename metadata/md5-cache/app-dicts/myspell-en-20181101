@@ -9,5 +9,5 @@ LICENSE=BSD MIT LGPL-3+
 REQUIRED_USE=|| ( l10n_en l10n_en-AU l10n_en-CA l10n_en-GB l10n_en-US l10n_en-ZA )
 SLOT=0
 SRC_URI=https://extensions.libreoffice.org/extensions/english-dictionaries/2018-11.01/@@download/file/dict-en-20181101.oxt
-_eclasses_=myspell-r2	efe585da0c175bc2ac2dffda176c79dc
+_eclasses_=myspell-r2	d7a80fcc3949917840a5c8f1a967004c
 _md5_=371374458cdedd6029d3fadca5934ba5

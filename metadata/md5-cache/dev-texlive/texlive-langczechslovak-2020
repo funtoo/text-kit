@@ -1,0 +1,14 @@
+BDEPEND=>=app-text/texlive-core-2020 app-arch/xz-utils
+DEFINED_PHASES=compile install postinst postrm unpack
+DEPEND=>=dev-texlive/texlive-basic-2020 >=dev-texlive/texlive-latex-2020 >=dev-texlive/texlive-basic-2019 >=dev-texlive/texlive-latex-2019 >=app-text/texlive-core-2014[xetex] >=dev-texlive/texlive-luatex-2016 >=dev-texlive/texlive-langenglish-2019 >=dev-texlive/texlive-langeuropean-2019 >=dev-texlive/texlive-langfrench-2019 >=dev-texlive/texlive-langgerman-2019 >=dev-texlive/texlive-langpolish-2019 >=dev-texlive/texlive-langspanish-2019 >=dev-texlive/texlive-langitalian-2019
+DESCRIPTION=TeXLive Czech/Slovak
+EAPI=7
+HOMEPAGE=http://www.tug.org/texlive/
+IUSE=source doc
+KEYWORDS=*
+LICENSE=GPL-1 GPL-2 LPPL-1.3 TeX-other-free
+RDEPEND=>=dev-texlive/texlive-basic-2020 >=dev-texlive/texlive-latex-2020 >=dev-texlive/texlive-basic-2019 >=dev-texlive/texlive-latex-2019 >=app-text/texlive-core-2014[xetex] >=dev-texlive/texlive-luatex-2016 >=dev-texlive/texlive-langenglish-2019 >=dev-texlive/texlive-langeuropean-2019 >=dev-texlive/texlive-langfrench-2019 >=dev-texlive/texlive-langgerman-2019 >=dev-texlive/texlive-langpolish-2019 >=dev-texlive/texlive-langspanish-2019 >=dev-texlive/texlive-langitalian-2019 >=app-text/texlive-core-2020
+SLOT=0
+SRC_URI=mirror://gentoo/tl-babel-czech-2020.tar.xz mirror://gentoo/tl-babel-slovak-2020.tar.xz mirror://gentoo/tl-cnbwp-2020.tar.xz mirror://gentoo/tl-cs-2020.tar.xz mirror://gentoo/tl-csbulletin-2020.tar.xz mirror://gentoo/tl-cslatex-2020.tar.xz mirror://gentoo/tl-csplain-2020.tar.xz mirror://gentoo/tl-cstex-2020.tar.xz mirror://gentoo/tl-hyphen-czech-2020.tar.xz mirror://gentoo/tl-hyphen-slovak-2020.tar.xz mirror://gentoo/tl-lshort-czech-2020.tar.xz mirror://gentoo/tl-lshort-slovak-2020.tar.xz mirror://gentoo/tl-texlive-cz-2020.tar.xz mirror://gentoo/tl-collection-langczechslovak-2020.tar.xz doc? ( mirror://gentoo/tl-babel-czech.doc-2020.tar.xz mirror://gentoo/tl-babel-slovak.doc-2020.tar.xz mirror://gentoo/tl-cnbwp.doc-2020.tar.xz mirror://gentoo/tl-csbulletin.doc-2020.tar.xz mirror://gentoo/tl-cslatex.doc-2020.tar.xz mirror://gentoo/tl-cstex.doc-2020.tar.xz mirror://gentoo/tl-lshort-czech.doc-2020.tar.xz mirror://gentoo/tl-lshort-slovak.doc-2020.tar.xz mirror://gentoo/tl-texlive-cz.doc-2020.tar.xz ) source? ( mirror://gentoo/tl-babel-czech.source-2020.tar.xz mirror://gentoo/tl-babel-slovak.source-2020.tar.xz mirror://gentoo/tl-cslatex.source-2020.tar.xz )
+_eclasses_=texlive-common	9e2ec6f6212b1eed3c02777654057d2b	texlive-module	1523e53d8f178af947b9dfc978c3df5a
+_md5_=c8e53f5218b610d0ea81fa28a9c65529

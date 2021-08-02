@@ -1,0 +1,14 @@
+BDEPEND=>=app-text/texlive-core-2020 app-arch/xz-utils
+DEFINED_PHASES=compile install postinst postrm unpack
+DEPEND=>=dev-texlive/texlive-langcjk-2020
+DESCRIPTION=TeXLive Korean
+EAPI=7
+HOMEPAGE=http://www.tug.org/texlive/
+IUSE=source doc
+KEYWORDS=*
+LICENSE=FDL-1.1 GPL-2 LPPL-1.3 OFL TeX-other-free
+RDEPEND=>=dev-texlive/texlive-langcjk-2020 >=app-text/texlive-core-2020
+SLOT=0
+SRC_URI=mirror://gentoo/tl-baekmuk-2020.tar.xz mirror://gentoo/tl-cjk-ko-2020.tar.xz mirror://gentoo/tl-kotex-oblivoir-2020.tar.xz mirror://gentoo/tl-kotex-plain-2020.tar.xz mirror://gentoo/tl-kotex-utf-2020.tar.xz mirror://gentoo/tl-kotex-utils-2020.tar.xz mirror://gentoo/tl-lshort-korean-2020.tar.xz mirror://gentoo/tl-nanumtype1-2020.tar.xz mirror://gentoo/tl-pmhanguljamo-2020.tar.xz mirror://gentoo/tl-uhc-2020.tar.xz mirror://gentoo/tl-unfonts-core-2020.tar.xz mirror://gentoo/tl-unfonts-extra-2020.tar.xz mirror://gentoo/tl-collection-langkorean-2020.tar.xz doc? ( mirror://gentoo/tl-baekmuk.doc-2020.tar.xz mirror://gentoo/tl-cjk-ko.doc-2020.tar.xz mirror://gentoo/tl-kotex-oblivoir.doc-2020.tar.xz mirror://gentoo/tl-kotex-plain.doc-2020.tar.xz mirror://gentoo/tl-kotex-utf.doc-2020.tar.xz mirror://gentoo/tl-kotex-utils.doc-2020.tar.xz mirror://gentoo/tl-lshort-korean.doc-2020.tar.xz mirror://gentoo/tl-nanumtype1.doc-2020.tar.xz mirror://gentoo/tl-pmhanguljamo.doc-2020.tar.xz mirror://gentoo/tl-uhc.doc-2020.tar.xz mirror://gentoo/tl-unfonts-core.doc-2020.tar.xz mirror://gentoo/tl-unfonts-extra.doc-2020.tar.xz )
+_eclasses_=texlive-common	9e2ec6f6212b1eed3c02777654057d2b	texlive-module	1523e53d8f178af947b9dfc978c3df5a
+_md5_=61aebace5541688f066eb346b563b4ef

@@ -1,0 +1,14 @@
+BDEPEND=>=app-text/texlive-core-2020 app-arch/xz-utils
+DEFINED_PHASES=compile install postinst postrm unpack
+DEPEND=>=dev-texlive/texlive-latex-2020 >=dev-texlive/texlive-basic-2020 !<dev-texlive/texlive-basic-2016
+DESCRIPTION=TeXLive Polish
+EAPI=7
+HOMEPAGE=http://www.tug.org/texlive/
+IUSE=source doc
+KEYWORDS=*
+LICENSE=FDL-1.1 GPL-2 LPPL-1.2 LPPL-1.3 LPPL-1.3c public-domain TeX
+RDEPEND=>=dev-texlive/texlive-latex-2020 >=dev-texlive/texlive-basic-2020 !<dev-texlive/texlive-basic-2016 >=app-text/texlive-core-2020
+SLOT=0
+SRC_URI=mirror://gentoo/tl-babel-polish-2020.tar.xz mirror://gentoo/tl-bredzenie-2020.tar.xz mirror://gentoo/tl-cc-pl-2020.tar.xz mirror://gentoo/tl-gustlib-2020.tar.xz mirror://gentoo/tl-gustprog-2020.tar.xz mirror://gentoo/tl-hyphen-polish-2020.tar.xz mirror://gentoo/tl-lshort-polish-2020.tar.xz mirror://gentoo/tl-mex-2020.tar.xz mirror://gentoo/tl-mwcls-2020.tar.xz mirror://gentoo/tl-pl-2020.tar.xz mirror://gentoo/tl-polski-2020.tar.xz mirror://gentoo/tl-przechlewski-book-2020.tar.xz mirror://gentoo/tl-qpxqtx-2020.tar.xz mirror://gentoo/tl-tap-2020.tar.xz mirror://gentoo/tl-tex-virtual-academy-pl-2020.tar.xz mirror://gentoo/tl-texlive-pl-2020.tar.xz mirror://gentoo/tl-utf8mex-2020.tar.xz mirror://gentoo/tl-collection-langpolish-2020.tar.xz doc? ( mirror://gentoo/tl-babel-polish.doc-2020.tar.xz mirror://gentoo/tl-bredzenie.doc-2020.tar.xz mirror://gentoo/tl-cc-pl.doc-2020.tar.xz mirror://gentoo/tl-gustlib.doc-2020.tar.xz mirror://gentoo/tl-gustprog.doc-2020.tar.xz mirror://gentoo/tl-lshort-polish.doc-2020.tar.xz mirror://gentoo/tl-mex.doc-2020.tar.xz mirror://gentoo/tl-mwcls.doc-2020.tar.xz mirror://gentoo/tl-pl.doc-2020.tar.xz mirror://gentoo/tl-polski.doc-2020.tar.xz mirror://gentoo/tl-przechlewski-book.doc-2020.tar.xz mirror://gentoo/tl-qpxqtx.doc-2020.tar.xz mirror://gentoo/tl-tap.doc-2020.tar.xz mirror://gentoo/tl-tex-virtual-academy-pl.doc-2020.tar.xz mirror://gentoo/tl-texlive-pl.doc-2020.tar.xz mirror://gentoo/tl-utf8mex.doc-2020.tar.xz ) source? ( mirror://gentoo/tl-babel-polish.source-2020.tar.xz mirror://gentoo/tl-mex.source-2020.tar.xz mirror://gentoo/tl-mwcls.source-2020.tar.xz mirror://gentoo/tl-polski.source-2020.tar.xz )
+_eclasses_=texlive-common	9e2ec6f6212b1eed3c02777654057d2b	texlive-module	1523e53d8f178af947b9dfc978c3df5a
+_md5_=4c72cec04cf2e85276b0b8e0bcff3978

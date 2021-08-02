@@ -10,5 +10,5 @@ PDEPEND=biber? ( ~dev-tex/biber-2.7 )
 RDEPEND=dev-texlive/texlive-bibtexextra dev-texlive/texlive-latexextra dev-texlive/texlive-plaingeneric virtual/latex-base
 SLOT=0
 SRC_URI=mirror://sourceforge/biblatex/biblatex-3.7.tds.tgz
-_eclasses_=latex-package	ca49a9ff1e176df32ece725a26e74d2a
+_eclasses_=latex-package	17f13abe0de88340745e52e6b627aee7
 _md5_=25612407013659f53c7adf4485e96524
