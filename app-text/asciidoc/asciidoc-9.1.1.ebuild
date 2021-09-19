@@ -8,7 +8,7 @@ inherit autotools python-single-r1 readme.gentoo-r1
 
 DESCRIPTION="A plain text human readable/writable document format"
 HOMEPAGE="https://asciidoc.org/ https://github.com/asciidoc/asciidoc-py3/"
-SRC_URI="https://api.github.com/repos/asciidoc-py/asciidoc-py/tarball/9.1.0 -> asciidoc-py-9.1.0.tar.gz"
+SRC_URI="https://api.github.com/repos/asciidoc-py/asciidoc-py/tarball/9.1.1 -> asciidoc-py-9.1.1.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
