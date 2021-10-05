@@ -6,7 +6,7 @@ inherit desktop flag-o-matic toolchain-funcs xdg
 
 DESCRIPTION="A lightweight PDF viewer and toolkit written in portable C"
 HOMEPAGE="https://mupdf.com/ https://git.ghostscript.com/?p=mupdf.git"
-SRC_URI="https://mupdf.com/downloads/archive/mupdf-1.18.0-source.tar.xz"
+SRC_URI="https://mupdf.com/downloads/archive/mupdf-1.19.0-source.tar.xz"
 S="${WORKDIR}/${P}-source"
 
 LICENSE="AGPL-3"
