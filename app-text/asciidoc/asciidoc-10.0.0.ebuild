@@ -2,88 +2,24 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3+ pypy3 )
+PYTHON_COMPAT=( python3+ pypi )
+inherit distutils-r1
 
-inherit autotools python-single-r1 readme.gentoo-r1
+DESCRIPTION="AsciiDoc is a text document format for writing things."
+HOMEPAGE="https://github.com/asciidoc/asciidoc-py3 https://pypi.org/project/asciidoc/"
+SRC_URI="https://files.pythonhosted.org/packages/6b/26/d2828867b366b73fc55b5ed51d7ad369195cc51d6293875ac152aa4b1742/asciidoc-10.0.0.tar.gz
+"
 
-DESCRIPTION="A plain text human readable/writable document format"
-HOMEPAGE="https://asciidoc.org/ https://github.com/asciidoc/asciidoc-py3/"
-SRC_URI="https://api.github.com/repos/asciidoc-py/asciidoc-py/tarball/10.0.0 -> asciidoc-py-10.0.0.tar.gz"
-
-LICENSE="GPL-2"
-SLOT="0"
-KEYWORDS="*"
-IUSE="doc test"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
-RESTRICT="!test? ( test )"
-
-RDEPEND="${PYTHON_DEPS}
+DEPEND=""
+RDEPEND="
 	app-text/docbook-xml-dtd:4.5
 	>=app-text/docbook-xsl-stylesheets-1.75
 	dev-libs/libxslt
-	dev-libs/libxml2:2
-	"
-DEPEND="
-	test? (
-		${PYTHON_DEPS}
-		app-text/dvipng
-		app-text/dvisvgm
-		dev-texlive/texlive-latex
-		dev-util/source-highlight
-		media-gfx/graphviz
-		media-gfx/imagemagick
-		media-sound/lilypond
-	)"
+	dev-libs/libxml2:2"
 
-DOC_CONTENTS="
-If you are going to use a2x, please also look at a2x(1) under
-REQUISITES for a list of runtime dependencies.
-"
+IUSE=""
+SLOT="0"
+LICENSE="MIT"
+KEYWORDS="*"
 
-DOCS=( BUGS.txt CHANGELOG.txt README.asciidoc
-	   docbook-xsl/asciidoc-docbook-xsl.txt dblatex/dblatex-readme.txt
-	   filters/code/code-filter-readme.txt )
-
-src_unpack() {
-	default
-	rm -rf ${S}
-	mv ${WORKDIR}/asciidoc-py-asciidoc-py-* ${S} || die
-}
-
-src_prepare() {
-	default
-	# Only needed for prefix - harmless (does nothing) otherwise
-	sed -i -e "s:^CONF_DIR=.*:CONF_DIR='${EPREFIX}/etc/asciidoc':" \
-		asciidoc.py || die
-
-	# enforce usage of the configured version of Python
-	sed -i -e "s:python3:${EPYTHON}:" Makefile.in || die
-
-	eautoreconf
-}
-
-src_configure() {
-	econf --sysconfdir="${EPREFIX}"/usr/share
-}
-
-src_install() {
-	default
-
-	if use doc; then
-		emake DESTDIR="${D}" docs
-	fi
-
-	python_fix_shebang "${ED}"/usr/bin/*.py
-
-	readme.gentoo_create_doc
-}
-
-pkg_postinst() {
-	readme.gentoo_print_elog
-
-	elog "\"music\" filter support media-sound/lilypond media-gfx/imagemagick"
-	elog "\"source\" filter support dev-util/source-highlight dev-python/pygments app-text/highlight"
-	elog "\"latex\" filter support dev-texlive/texlive-latex app-text/dvipng dev-texlive/texlive-latex app-text/dvisvgm"
-	elog "\"graphviz\" filter support media-gfx/graphviz"
-}
+S="${WORKDIR}/asciidoc-10.0.0"
