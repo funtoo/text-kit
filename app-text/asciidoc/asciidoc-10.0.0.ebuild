@@ -2,7 +2,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3+ pypi )
+PYTHON_COMPAT=( python3+ pypy )
 inherit distutils-r1
 
 DESCRIPTION="AsciiDoc is a text document format for writing things."
