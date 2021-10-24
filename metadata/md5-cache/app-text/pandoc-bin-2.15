@@ -7,5 +7,5 @@ LICENSE=GPL-2
 RDEPEND=!app-text/pandoc
 RESTRICT=strip
 SLOT=0
-SRC_URI=https://github.com/jgm/pandoc/releases/download/2.14.2/pandoc-2.14.2-linux-amd64.tar.gz
-_md5_=6fbb20429a907370da90aafa664aef34
+SRC_URI=https://github.com/jgm/pandoc/releases/download/2.15/pandoc-2.15-linux-amd64.tar.gz
+_md5_=5240d5a73b8682f9347b15f06ed133fd
