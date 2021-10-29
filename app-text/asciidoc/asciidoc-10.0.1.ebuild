@@ -7,7 +7,7 @@ inherit distutils-r1
 
 DESCRIPTION="AsciiDoc is a text document format for writing things."
 HOMEPAGE="https://github.com/asciidoc/asciidoc-py3 https://pypi.org/project/asciidoc/"
-SRC_URI="https://files.pythonhosted.org/packages/6b/26/d2828867b366b73fc55b5ed51d7ad369195cc51d6293875ac152aa4b1742/asciidoc-10.0.0.tar.gz
+SRC_URI="https://files.pythonhosted.org/packages/b9/5a/cefa14bb228c790de12bd52a4d7537cee7e6acbb73d21198b4d4fec2c92f/asciidoc-10.0.1.tar.gz
 "
 
 DEPEND=""
@@ -22,4 +22,4 @@ SLOT="0"
 LICENSE="MIT"
 KEYWORDS="*"
 
-S="${WORKDIR}/asciidoc-10.0.0"
+S="${WORKDIR}/asciidoc-10.0.1"
