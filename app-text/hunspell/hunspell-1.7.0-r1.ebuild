@@ -1,4 +1,3 @@
-# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -51,6 +50,7 @@ PATCHES=(
 	# to be placed in /usr/bin - this patch prefixes them with 'hunspell-'.
 	# It modifies a Makefile.am file, hence eautoreconf.
 	"${FILESDIR}/${PN}-1.7.0-renameexes.patch"
+	"${FILESDIR}/${PN}-1.7.0-CVE-2019-16707.patch"
 )
 
 src_prepare() {
