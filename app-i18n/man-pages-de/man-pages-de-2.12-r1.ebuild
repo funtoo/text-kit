@@ -1,4 +1,3 @@
-# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -13,7 +12,7 @@ SRC_URI="https://salsa.debian.org/manpages-de-team/manpages-de/-/archive/v${PV}/
 
 LICENSE="GPL-3+ man-pages GPL-2+ GPL-2 BSD"
 SLOT="0"
-KEYWORDS="alpha amd64 arm arm64 hppa ia64 m68k ~mips ppc ppc64 ~riscv s390 sh sparc x86"
+KEYWORDS="*"
 IUSE=""
 
 RDEPEND="virtual/man"
@@ -26,15 +25,19 @@ src_prepare() {
 
 	sed '/gzip --best/d' -i po/Makefile.am || die
 
-	# sys-apps/shadow has it's own translated man-page for this
+	# Some individual packages provide their own translated man-pages
 	local manpage
 	local noinst_manpages=(
-		upstream/debian-unstable/man1/groups.1
-		po/man1/groups.1.po
-		po/man1/su.1.po
+		# sys-apps/shadow
+		groups
+		su
+		# sys-apps/procps
+		free
+		uptime
 	)
 	for manpage in ${noinst_manpages[@]} ; do
-		rm "${manpage}" || die
+		rm upstream/debian-unstable/man1/${manpage}.1
+		rm -f po/man1/${manpage}.1.po
 	done
 
 	# Use the same compression as every other manpage
