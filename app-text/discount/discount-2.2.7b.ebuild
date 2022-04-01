@@ -6,7 +6,7 @@ inherit toolchain-funcs
 
 DESCRIPTION="A Markdown-to HTML translator written in C"
 HOMEPAGE="https://www.pell.portland.or.us/~orc/Code/discount/"
-SRC_URI="https://www.pell.portland.or.us/~orc/Code/discount/discount-2.2.7.tar.bz2 -> discount-2.2.7.tar.bz2"
+SRC_URI="https://www.pell.portland.or.us/~orc/Code/discount/discount-2.2.7b.tar.bz2 -> discount-2.2.7b.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
