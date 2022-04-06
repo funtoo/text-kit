@@ -5,7 +5,7 @@ EAPI=7
 inherit cmake toolchain-funcs xdg-utils
 
 CMAKE_BUILD_TYPE=""
-SRC_URI="https://api.github.com/repos/freedesktop/poppler/tarball/refs/tags/poppler-22.04.0 -> poppler-22.04.0.tar.gz"
+SRC_URI="https://github.com/freedesktop/poppler/tarball/bd6f20a62131baafcae40cbdb8475116f666f84f -> poppler-22.04.0-bd6f20a.tar.gz"
 KEYWORDS="*"
 SLOT="0/120"
 
@@ -55,9 +55,10 @@ PATCHES=(
 	"${FILESDIR}/${PN}-0.57.0-disable-internal-jpx.patch"
 )
 
-src_unpack() {
-	unpack $A
-	mv ${WORKDIR}/freedesktop-poppler-* ${S} || die
+post_src_unpack() {
+	if [ ! -d "${S}" ]; then
+		mv ${WORKDIR}/--* ${S} || die
+	fi
 }
 
 src_prepare() {
