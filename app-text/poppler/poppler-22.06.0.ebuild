@@ -5,9 +5,9 @@ EAPI=7
 inherit cmake toolchain-funcs xdg-utils
 
 CMAKE_BUILD_TYPE=""
-SRC_URI="https://github.com/freedesktop/poppler/tarball/d2dd9c322542eb7ea9e3e0b8324b33b3af9d8b1e -> poppler-22.05.0-d2dd9c3.tar.gz"
+SRC_URI="https://github.com/freedesktop/poppler/tarball/32fa2888eaaaaf80e5d2338cb8cb8b773ccfd4d3 -> poppler-22.06.0-32fa288.tar.gz"
 KEYWORDS="-*"
-SLOT="0/121"
+SLOT="0/122"
 
 DESCRIPTION="PDF rendering library based on the xpdf-3.0 code base"
 HOMEPAGE="https://poppler.freedesktop.org/"
