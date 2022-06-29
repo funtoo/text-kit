@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -11,7 +11,7 @@ SRC_URI="http://linuxjm.osdn.jp/${P}.tar.gz
 
 LICENSE="GPL-2+ GPL-2 LGPL-2+ LGPL-2 BSD MIT ISC HPND FDL-1.1+ LDP-1 LDP-1a man-pages Texinfo-manual"
 SLOT="0"
-KEYWORDS="alpha amd64 arm arm64 hppa ia64 ~m68k ~mips ppc ppc64 s390 ~sh sparc x86"
+KEYWORDS="~alpha amd64 arm arm64 hppa ~ia64 ~m68k ~mips ppc ppc64 ~riscv ~s390 sparc x86"
 IUSE=""
 
 RDEPEND="virtual/man"
@@ -23,6 +23,7 @@ src_prepare() {
 	# remove man pages that are provided by other packages.
 	# - sys-apps/shadow +nls
 	rm -f manual/*/man1/{chfn,chsh,newgrp,su,passwd,groups}.1 || die
+	rm -f manual/*/man5/passwd.5 || die
 	rm -f manual/*/man8/{vigr,vipw}.8 || die
 	# - app-arch/rpm +nls
 	rm -rf manual/rpm || die
