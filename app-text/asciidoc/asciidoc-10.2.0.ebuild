@@ -21,5 +21,4 @@ IUSE=""
 SLOT="0"
 LICENSE=""
 KEYWORDS="*"
-
 S="${WORKDIR}/asciidoc-10.2.0"
