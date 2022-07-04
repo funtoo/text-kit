@@ -5,7 +5,7 @@ EAPI=7
 inherit cmake toolchain-funcs xdg-utils
 
 CMAKE_BUILD_TYPE=""
-SRC_URI="https://github.com/freedesktop/poppler/tarball/32fa2888eaaaaf80e5d2338cb8cb8b773ccfd4d3 -> poppler-22.06.0-32fa288.tar.gz"
+SRC_URI="https://github.com/freedesktop/poppler/tarball/bb1651334abc11495fa0326c8d562243d2a4b055 -> poppler-22.07.0-bb16513.tar.gz"
 KEYWORDS="-*"
 SLOT="0/122"
 
