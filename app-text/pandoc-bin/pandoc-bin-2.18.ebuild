@@ -10,7 +10,7 @@ HOMEPAGE="
 	https://pandoc.org
 	https://github.com/jgm/pandoc
 "
-SRC_URI="https://github.com/jgm/pandoc/releases/download/2.18/pandoc-2.18-linux-amd64.tar.gz"
+SRC_URI="https://github.com/jgm/pandoc/releases/download/2.18/pandoc-2.18-linux-amd64.tar.gz -> pandoc-2.18-linux-amd64.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
