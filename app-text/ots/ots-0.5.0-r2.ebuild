@@ -1,16 +1,15 @@
-# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 inherit autotools eutils
 
 DESCRIPTION="Open source Text Summarizer, as used in newer releases of abiword and kword"
-HOMEPAGE="http://libots.sourceforge.net/"
-SRC_URI="mirror://sourceforge/libots/${P}.tar.gz"
+HOMEPAGE="https://github.com/neopunisher/Open-Text-Summarizer"
+SRC_URI="https://github.com/neopunisher/Open-Text-Summarizer/archive/refs/heads/master.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm hppa ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="*"
 IUSE=""
 
 RDEPEND="
@@ -24,14 +23,18 @@ DEPEND="${RDEPEND}
 
 DOCS="AUTHORS BUGS ChangeLog HACKING NEWS README TODO"
 
-src_prepare() {
-	# ugly ugly hack, kick upstream to fix its packaging
-	touch "${S}"/gtk-doc.make
+PATCHES=(
+	"${FILESDIR}"/${PN}-0.5.0-math.patch
+	"${FILESDIR}"/${PN}-0.5.0-automake-1.13.patch
+	"${FILESDIR}"/${PN}-0.5.0-fix-no-rule-to-make-libots.patch
+	"${FILESDIR}"/${PN}-0.5.0-fix-underlinking.patch
+)
 
-	epatch "${FILESDIR}"/${P}-math.patch
-	epatch "${FILESDIR}"/${P}-automake-1.13.patch
-	epatch "${FILESDIR}"/${P}-fix-installation.patch
-	epatch "${FILESDIR}"/${P}-fix-underlinking.patch
+src_prepare() {
+	default
+	touch "${S}"/gtk-doc.make
+	mv configure.in configure.ac || die
+	sed -i -e 's/en.xml$//' dic/Makefile.am || die
 	eautoreconf
 }
 
@@ -42,13 +45,7 @@ src_configure() {
 		--disable-static
 }
 
-src_compile() {
-	# parallel make fails, bug 112932
-	emake -j1
-}
-
 src_install() {
 	default
-	prune_libtool_files
-	rm -rf "${D}"/usr/share/doc/libots
+	find "${ED}" -type f -name "*.la" -delete || die
 }
