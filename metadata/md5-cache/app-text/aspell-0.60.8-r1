@@ -12,4 +12,4 @@ RDEPEND=sys-libs/ncurses:0=[unicode?] nls? ( virtual/libintl ) !=app-dicts/aspel
 SLOT=0
 SRC_URI=mirror://gnu/aspell/aspell-0.60.8.tar.gz
 _eclasses_=autotools	1bf086cdd7356f5c9a4acd9727bd2065	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	a09389deba2c0a7108b581e02c7cecbf	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
-_md5_=4a73630c40883535b3aad0dd16a557bb
+_md5_=1866ea52660f020fde2fe7b170679370
