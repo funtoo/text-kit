@@ -1,11 +1,10 @@
-# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit java-pkg-2 java-ant-2
+inherit java-pkg-2
 
-DESCRIPTION="gcj-free version of pdftk written in Java"
+DESCRIPTION="Java version of pdftk"
 HOMEPAGE="https://gitlab.com/pdftk-java/pdftk"
 
 if [[ ${PV} == 9999 ]] ; then
@@ -21,23 +20,26 @@ LICENSE="GPL-2"
 SLOT="0"
 
 JAVA_PKG_STRICT="yes"
-EANT_GENTOO_CLASSPATH="bcprov,commons-lang-3.6"
-JAVA_ANT_REWRITE_CLASSPATH="true"
+RESTRICT="network-sandbox"
 
 CDEPEND="
-	dev-java/bcprov:0
-	dev-java/commons-lang:3.6"
-
-RDEPEND="
-	${CDEPEND}
-	>=virtual/jre-1.7"
+    dev-java/maven-bin"
 
 DEPEND="
 	${CDEPEND}
-	>=virtual/jdk-1.7"
+	>=virtual/jdk-11
+	dev-java/javatoolkit"
+
+RDEPEND="
+	>=virtual/jdk-11"
+
+
+src_compile() {
+    /usr/bin/mvn clean package -DskipTests
+}
 
 src_install() {
-	java-pkg_newjar "build/jar/pdftk.jar"
+	java-pkg_newjar "target/pdftk-java-${PV}.jar"
 	java-pkg_dolauncher ${PN} --main com.gitlab.pdftk_java.pdftk
 	doman "${PN}.1"
 }
