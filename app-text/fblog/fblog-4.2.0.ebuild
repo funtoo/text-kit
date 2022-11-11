@@ -11,21 +11,19 @@ block-buffer-0.10.3
 bstr-0.2.17
 cc-1.0.73
 cfg-if-1.0.0
-clap-3.2.22
-clap_derive-3.2.18
-clap_lex-0.2.4
+clap-4.0.10
+clap_derive-4.0.10
+clap_lex-0.3.0
 cpufeatures-0.2.5
 crypto-common-0.1.6
 digest-0.10.5
 generic-array-0.14.6
 handlebars-4.3.4
-hashbrown-0.12.3
 heck-0.4.0
 hermit-abi-0.1.19
-indexmap-1.9.1
 itoa-1.0.3
 lazy_static-1.4.0
-libc-0.2.133
+libc-0.2.134
 log-0.4.17
 lua-src-544.0.1
 luajit-src-210.4.3+resty8384278
@@ -34,14 +32,14 @@ mlua-0.8.3
 num-traits-0.2.15
 once_cell-1.15.0
 os_str_bytes-6.3.0
-pest-2.3.1
-pest_derive-2.3.1
-pest_generator-2.3.1
-pest_meta-2.3.1
+pest-2.4.0
+pest_derive-2.4.0
+pest_generator-2.4.0
+pest_meta-2.4.0
 pkg-config-0.3.25
 proc-macro-error-1.0.4
 proc-macro-error-attr-1.0.4
-proc-macro2-1.0.44
+proc-macro2-1.0.46
 quote-1.0.21
 regex-1.6.0
 regex-syntax-0.6.27
@@ -53,9 +51,8 @@ sha1-0.10.5
 strsim-0.10.0
 syn-1.0.101
 termcolor-1.1.3
-textwrap-0.15.1
-thiserror-1.0.36
-thiserror-impl-1.0.36
+thiserror-1.0.37
+thiserror-impl-1.0.37
 typenum-1.15.0
 ucd-trie-0.1.5
 unicode-ident-1.0.4
@@ -71,7 +68,7 @@ inherit cargo
 
 DESCRIPTION="Small command-line JSON Log viewer"
 HOMEPAGE="https://github.com/brocode/fblog"
-SRC_URI="https://api.github.com/repos/brocode/fblog/tarball/v4.1.0 -> fblog-4.1.0.tar.gz
+SRC_URI="https://api.github.com/repos/brocode/fblog/tarball/v4.2.0 -> fblog-4.2.0.tar.gz
 	$(cargo_crate_uris ${CRATES})"
 
 LICENSE="Apache-2.0 Boost-1.0 BSD BSD-2 CC0-1.0 ISC LGPL-3+ MIT Apache-2.0 Unlicense WTFPL-2 ZLIB"
