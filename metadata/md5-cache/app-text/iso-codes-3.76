@@ -1,5 +1,5 @@
 DEFINED_PHASES=prepare setup
-DEPEND=|| ( dev-lang/python:3.10 dev-lang/python:3.8 dev-lang/python:3.9 dev-lang/python:3.7 ) app-arch/xz-utils sys-devel/gettext
+DEPEND=|| ( dev-lang/python:3.8 dev-lang/python:3.9 dev-lang/python:3.7 dev-lang/python:3.10 ) app-arch/xz-utils sys-devel/gettext
 DESCRIPTION=ISO language, territory, currency, script codes and their translations
 EAPI=6
 HOMEPAGE=http://pkg-isocodes.alioth.debian.org/
