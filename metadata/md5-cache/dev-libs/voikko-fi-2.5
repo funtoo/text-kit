@@ -1,0 +1,13 @@
+BDEPEND=|| ( dev-lang/python:3.8[xml(+)] dev-lang/python:3.9[xml(+)] dev-lang/python:3.7[xml(+)] dev-lang/python:3.10[xml(+)] ) dev-libs/libvoikko
+DEFINED_PHASES=compile install setup unpack
+DEPEND=dev-libs/foma:= dev-libs/libvoikko
+DESCRIPTION=Finnish dictionary for libvoikko based spell checkers (vvfst format)
+EAPI=7
+HOMEPAGE=https://voikko.puimula.org/
+KEYWORDS=*
+LICENSE=GPL-2+
+RDEPEND=dev-libs/foma:= dev-libs/libvoikko
+SLOT=0
+SRC_URI=https://github.com/voikko/corevoikko/tarball/a3f29da7ce47d77e325898d04f01ac9b5c311581 -> corevoikko-2.5-a3f29da.tar.gz
+_eclasses_=eapi8-dosym	cd7d420bb5be5ee079f27239ce76b8f5	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	python-any-r1	54a3178500786b0a7ede4a23b7f2a6ad	python-utils-r1	32393cac272daca4c136cc44e6005b67	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=5d9091a4f62f0311e60236300d7d3cda
