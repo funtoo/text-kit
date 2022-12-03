@@ -2,7 +2,9 @@ app-dicts
 app-doc
 app-i18n
 app-text
+dev-libs
 dev-tex
 dev-texlive
+dev-util
 sys-apps
 virtual
