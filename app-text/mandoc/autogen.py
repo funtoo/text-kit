@@ -52,7 +52,7 @@ async def generate(hub, **pkginfo):
 	if not len(href_tuples):
 		raise hub.pkgtools.ebuild.BreezyError(f"No valid tarballs found for {app}.")
 	href, version = href_tuples[-1]
-	artifact = hub.pkgtools.ebuild.Artifact(url=f"{src_url}{href}")
+	artifact = hub.pkgtools.ebuild.Artifact(url=f"https://distfiles.gentoo.org/distfiles/mandoc-1.14.6.tar.gz")
 	generate = []
 	generate.append({ "cat" : "app-text", "name": "mandoc", "version" : version})
 
