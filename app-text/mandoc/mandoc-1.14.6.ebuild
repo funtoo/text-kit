@@ -6,7 +6,7 @@ inherit toolchain-funcs
 
 DESCRIPTION="Suite of tools compiling mdoc and man"
 HOMEPAGE="https://mdocml.bsd.lv/"
-SRC_URI="https://distfiles.gentoo.org/distfiles/mandoc-1.14.6.tar.gz -> mandoc-1.14.6.tar.gz"
+SRC_URI="https://mandoc.bsd.lv/snapshots/mandoc-1.14.6.tar.gz -> mandoc-1.14.6.tar.gz"
 
 LICENSE="ISC"
 SLOT="0"
