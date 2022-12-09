@@ -1,0 +1,14 @@
+BDEPEND=>=app-portage/elt-patches-20170815
+DEFINED_PHASES=configure install prepare
+DEPEND=gif? ( >=media-libs/giflib-5.1.3:= ) jpeg? ( virtual/jpeg:0= ) jpeg2k? ( media-libs/openjpeg:2= ) png? ( media-libs/libpng:0= sys-libs/zlib:= ) tiff? ( media-libs/tiff:0= ) webp? ( media-libs/libwebp:= ) zlib? ( sys-libs/zlib:= )
+DESCRIPTION=C library for image processing and analysis
+EAPI=7
+HOMEPAGE=http://www.leptonica.org/
+IUSE=gif jpeg jpeg2k png static-libs tiff utils webp zlib
+KEYWORDS=*
+LICENSE=Apache-2.0
+RDEPEND=gif? ( >=media-libs/giflib-5.1.3:= ) jpeg? ( virtual/jpeg:0= ) jpeg2k? ( media-libs/openjpeg:2= ) png? ( media-libs/libpng:0= sys-libs/zlib:= ) tiff? ( media-libs/tiff:0= ) webp? ( media-libs/libwebp:= ) zlib? ( sys-libs/zlib:= )
+SLOT=0/5
+SRC_URI=https://github.com/DanBloomberg/leptonica/releases/download/1.82.0/leptonica-1.82.0.tar.gz
+_eclasses_=libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=eaacce63423b14def66d30d2f415015b
