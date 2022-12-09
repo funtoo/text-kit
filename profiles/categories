@@ -6,5 +6,6 @@ dev-libs
 dev-tex
 dev-texlive
 dev-util
+media-libs
 sys-apps
 virtual
