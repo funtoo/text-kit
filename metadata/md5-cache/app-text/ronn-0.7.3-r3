@@ -1,15 +1,15 @@
 DEFINED_PHASES=compile configure install prepare setup test unpack
-DEPEND=test? ( ruby_targets_ruby27? ( >=dev-ruby/hpricot-0.8.2[ruby_targets_ruby27(-)] >=dev-ruby/mustache-0.7.0[ruby_targets_ruby27(-)] >=dev-ruby/rdiscount-1.5.8[ruby_targets_ruby27(-)] ) ) ruby_targets_ruby27? ( >=dev-ruby/hpricot-0.8.2[ruby_targets_ruby27(-)] >=dev-ruby/mustache-0.7.0[ruby_targets_ruby27(-)] >=dev-ruby/rdiscount-1.5.8[ruby_targets_ruby27(-)] ) ruby_targets_ruby27? ( dev-lang/ruby:2.7 ) ruby_targets_ruby27? ( test? ( dev-ruby/rake[ruby_targets_ruby27(-)] ) ) ruby_targets_ruby27? ( virtual/rubygems[ruby_targets_ruby27(-)] ) test? ( ruby_targets_ruby27? ( virtual/rubygems[ruby_targets_ruby27(-)] ) )
+DEPEND=test? ( ruby_targets_ruby30? ( >=dev-ruby/hpricot-0.8.2[ruby_targets_ruby30(-)] >=dev-ruby/mustache-0.7.0[ruby_targets_ruby30(-)] >=dev-ruby/rdiscount-1.5.8[ruby_targets_ruby30(-)] ) ) ruby_targets_ruby30? ( >=dev-ruby/hpricot-0.8.2[ruby_targets_ruby30(-)] >=dev-ruby/mustache-0.7.0[ruby_targets_ruby30(-)] >=dev-ruby/rdiscount-1.5.8[ruby_targets_ruby30(-)] ) ruby_targets_ruby30? ( dev-lang/ruby:3.0 ) ruby_targets_ruby30? ( test? ( dev-ruby/rake[ruby_targets_ruby30(-)] ) ) ruby_targets_ruby30? ( virtual/rubygems[ruby_targets_ruby30(-)] ) test? ( ruby_targets_ruby30? ( virtual/rubygems[ruby_targets_ruby30(-)] ) )
 DESCRIPTION=Converts simple, human readable textfiles to roff for terminal display, and HTML
 EAPI=5
 HOMEPAGE=https://github.com/rtomayko/ronn/
 IUSE=test ruby_targets_ruby23 ruby_targets_ruby24 ruby_targets_ruby25 ruby_targets_ruby26 test test
 KEYWORDS=alpha amd64 arm ~arm64 hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd ~x64-macos ~x64-solaris
 LICENSE=MIT
-RDEPEND=ruby_targets_ruby27? ( >=dev-ruby/hpricot-0.8.2[ruby_targets_ruby27(-)] >=dev-ruby/mustache-0.7.0[ruby_targets_ruby27(-)] >=dev-ruby/rdiscount-1.5.8[ruby_targets_ruby27(-)] ) ruby_targets_ruby27? ( dev-lang/ruby:2.7 ) ruby_targets_ruby27? ( virtual/rubygems[ruby_targets_ruby27(-)] )
-REQUIRED_USE=|| ( ruby_targets_ruby27 )
+RDEPEND=ruby_targets_ruby30? ( >=dev-ruby/hpricot-0.8.2[ruby_targets_ruby30(-)] >=dev-ruby/mustache-0.7.0[ruby_targets_ruby30(-)] >=dev-ruby/rdiscount-1.5.8[ruby_targets_ruby30(-)] ) ruby_targets_ruby30? ( dev-lang/ruby:3.0 ) ruby_targets_ruby30? ( virtual/rubygems[ruby_targets_ruby30(-)] )
+REQUIRED_USE=|| ( ruby_targets_ruby30 )
 RESTRICT=!test? ( test ) !test? ( test ) !test? ( test )
 SLOT=0
 SRC_URI=https://rubygems.org/gems/ronn-0.7.3.gem
-_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	cb17fbe94a2c43cbc0f8e76abf15479a	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ltprune	22f9f14d105434e9c400ccac3bbb64ae	multilib	d410501a125f99ffb560b0c523cd3d1e	preserve-libs	ef207dc62baddfddfd39a164d9797648	ruby-fakegem	2e0373a7f4e043d3d58231990b0bf65f	ruby-ng	517b8b0e1f18ba9deb1c46ddfb88b95b	ruby-utils	daabb2a420d9b5dd405eb5474382f47b	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
+_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	cb17fbe94a2c43cbc0f8e76abf15479a	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ltprune	22f9f14d105434e9c400ccac3bbb64ae	multilib	d410501a125f99ffb560b0c523cd3d1e	preserve-libs	ef207dc62baddfddfd39a164d9797648	ruby-fakegem	2e0373a7f4e043d3d58231990b0bf65f	ruby-ng	b696b71528105a90c4e44b101bd7f8ed	ruby-utils	3791942eec3367882de76288f91c9d78	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
 _md5_=a622bb30641346963e63e7c78bac1f5a
