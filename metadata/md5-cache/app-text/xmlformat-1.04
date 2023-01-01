@@ -9,5 +9,5 @@ LICENSE=xmlformat
 RDEPEND=ruby? ( || ( dev-lang/ruby:2.6 ) virtual/rubygems ) !ruby? ( dev-lang/perl )
 SLOT=0
 SRC_URI=http://www.kitebird.com/software/xmlformat/xmlformat-1.04.tar.gz
-_eclasses_=ruby-single	4777fffdeb907df4c1d5fb2921d840fa	ruby-utils	daabb2a420d9b5dd405eb5474382f47b
+_eclasses_=ruby-single	82dad1e5124ef85947ab6d32877d0080	ruby-utils	3791942eec3367882de76288f91c9d78
 _md5_=75fa847eaf109223d41ce808ac1e197c
