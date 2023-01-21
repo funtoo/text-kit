@@ -1,4 +1,3 @@
-# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -11,7 +10,7 @@ SRC_URI="https://github.com/editorconfig/${PN}/archive/v${PV}.tar.gz -> ${P}.tar
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm64 ~x86"
+KEYWORDS="*"
 IUSE="cli doc"
 CDEPEND="dev-libs/libpcre:="
 DEPEND="${CDEPEND}
@@ -20,6 +19,7 @@ RDEPEND="${CDEPEND}
 	cli? ( !dev-python/editorconfig-core-py[cli] )"
 
 src_prepare() {
+	export MAKEOPTS="-j1"
 	sed -e 's:OUTPUT_NAME editorconfig_static:OUTPUT_NAME editorconfig:' \
 		-i src/lib/CMakeLists.txt || die
 	cmake-utils_src_prepare
