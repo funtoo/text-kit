@@ -8,7 +8,7 @@ inherit python-r1
 
 DESCRIPTION="Spell checking, hyphenation and morphological analysis tool for Finnish language"
 HOMEPAGE="https://voikko.puimula.org/"
-SRC_URI="https://github.com/voikko/corevoikko/tarball/55f8a46e11032d20f9b2d0ad84d02ba892336668 -> corevoikko-4.3.1-55f8a46.tar.gz"
+SRC_URI="https://github.com/voikko/corevoikko/tarball/04c25d23a2b250f8d9e076e26cc037a5ef76f883 -> corevoikko-4.3.2-04c25d2.tar.gz"
 
 LICENSE="GPL-2+"
 SLOT="0"
