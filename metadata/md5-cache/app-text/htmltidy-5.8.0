@@ -1,0 +1,15 @@
+BDEPEND=dev-util/ninja dev-util/cmake
+DEFINED_PHASES=compile configure install prepare setup test unpack
+DEPEND=test? ( ruby_targets_ruby32? ( dev-lang/ruby:3.2 ) ruby_targets_ruby31? ( dev-lang/ruby:3.1 ) ruby_targets_ruby30? ( dev-lang/ruby:3.0 ) ruby_targets_ruby27? ( dev-lang/ruby:2.7 ) )
+DESCRIPTION=The granddaddy of HTML tools, with support for modern standards
+EAPI=7
+HOMEPAGE=https://www.html-tidy.org/
+IUSE=deprecated test ruby_targets_ruby27 ruby_targets_ruby30 ruby_targets_ruby31 ruby_targets_ruby32
+KEYWORDS=*
+LICENSE=BSD
+REQUIRED_USE=test? ( || ( ruby_targets_ruby32 ruby_targets_ruby31 ruby_targets_ruby30 ruby_targets_ruby27 ) )
+RESTRICT=!test? ( test )
+SLOT=0/58
+SRC_URI=https://github.com/htacg/tidy-html5/tarball/1ca37471b48a3498f985509828cb3cf85ea129f8 -> tidy-html5-5.8.0-1ca3747.tar.gz
+_eclasses_=cmake	ac7cb516f6a288b6a82bc0649ce49878	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	d0939f99dd528dd0c5ec25284877bf5c	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	132cbb376048d079b5a012f5467c4e7f	ruby-ng	b696b71528105a90c4e44b101bd7f8ed	ruby-utils	3791942eec3367882de76288f91c9d78	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	xdg-utils	14d00d009167652b1fa363e55effe213
+_md5_=b67f00682949b3e5005a3cdd75eaa72a
