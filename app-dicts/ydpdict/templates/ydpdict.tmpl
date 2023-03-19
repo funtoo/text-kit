@@ -1,23 +1,42 @@
-# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
+inherit autotools
 
-DESCRIPTION="Interface for the Collins Dictionary"
-HOMEPAGE="http://toxygen.net/ydpdict/"
-SRC_URI="http://toxygen.net/${PN}/${P}.tar.gz"
+DESCRIPTION="{{ description }}"
+HOMEPAGE="https://github.com/wojtekka/ydpdict"
+SRC_URI="{{ artifacts[0].src_uri }}"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="*"
 IUSE="ao"
 
-RDEPEND=">=app-dicts/libydpdict-${PV}
-	sys-libs/ncurses[unicode]
-	ao? ( media-libs/libao )"
+RDEPEND="
+	app-dicts/libydpdict
+	sys-libs/ncurses:=
+	ao? ( media-libs/libao )
+"
+DEPEND="${RDEPEND}"
+BDEPEND="virtual/pkgconfig"
 
-DEPEND="${RDEPEND}
-	virtual/pkgconfig"
+DOCS=(
+	README.md
+)
+PATCHES=(
+	"${FILESDIR}"/${PN}-1.0.3-tinfo.patch
+)
+
+post_src_unpack() {
+	if [ ! -d "${S}" ]; then
+		mv {{ github_user }}-{{ github_repo }}* "${S}" || die
+	fi
+}
+
+src_prepare() {
+	default
+	eautoreconf
+}
 
 src_configure() {
 	econf \
@@ -26,8 +45,7 @@ src_configure() {
 
 src_install() {
 	dodir "/etc"
-	emake DESTDIR="${D}" install
-	dodoc README
+	default
 }
 
 pkg_postinst() {
