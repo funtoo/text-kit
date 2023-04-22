@@ -5,15 +5,15 @@ EAPI=7
 inherit cmake toolchain-funcs xdg-utils
 
 CMAKE_BUILD_TYPE=""
-SRC_URI="https://github.com/freedesktop/poppler/tarball/bd6f20a62131baafcae40cbdb8475116f666f84f -> poppler-22.04.0-bd6f20a.tar.gz"
+SRC_URI="https://gitlab.freedesktop.org/poppler/poppler/-/archive/poppler-23.04.0/poppler-poppler-23.04.0.tar.bz2 -> poppler-poppler-23.04.0.tar.bz2"
 KEYWORDS="*"
-SLOT="0/120"
+SLOT="0/127"
 
 DESCRIPTION="PDF rendering library based on the xpdf-3.0 code base"
 HOMEPAGE="https://poppler.freedesktop.org/"
 
 LICENSE="GPL-2"
-IUSE="cairo cjk curl +cxx debug doc +introspection +jpeg +jpeg2k +lcms nss png qt5 tiff +utils"
+IUSE="boost cairo cjk curl +cxx debug doc +introspection +jpeg +jpeg2k +lcms nss png qt5 tiff +utils"
 
 # No test data provided
 RESTRICT="test"
@@ -52,12 +52,13 @@ DOCS=( AUTHORS NEWS README.md README-XPDF )
 
 PATCHES=(
 	"${FILESDIR}/${PN}-20.12.1-qt5-deps.patch"
+	"${FILESDIR}/${PN}-21.09.0-respect-cflags.patch"
 	"${FILESDIR}/${PN}-0.57.0-disable-internal-jpx.patch"
 )
 
 post_src_unpack() {
 	if [ ! -d "${S}" ]; then
-		mv ${WORKDIR}/freedesktop-poppler-* ${S} || die
+		mv ${WORKDIR}/poppler-poppler-* ${S} || die
 	fi
 }
 
@@ -85,7 +86,7 @@ src_configure() {
 		-DBUILD_QT5_TESTS=OFF
 		-DBUILD_CPP_TESTS=OFF
 		-DRUN_GPERF_IF_PRESENT=OFF
-		-DENABLE_SPLASH=ON
+		-DENABLE_BOOST=$(usex boost)
 		-DENABLE_ZLIB=ON
 		-DENABLE_ZLIB_UNCOMPRESS=OFF
 		-DENABLE_UNSTABLE_API_ABI_HEADERS=ON
