@@ -6,7 +6,7 @@ inherit cmake toolchain-funcs xdg-utils
 
 CMAKE_BUILD_TYPE=""
 SRC_URI="https://gitlab.freedesktop.org/poppler/poppler/-/archive/poppler-23.04.0/poppler-poppler-23.04.0.tar.bz2 -> poppler-poppler-23.04.0.tar.bz2"
-KEYWORDS="*"
+KEYWORDS="next"
 SLOT="0/127"
 
 DESCRIPTION="PDF rendering library based on the xpdf-3.0 code base"
