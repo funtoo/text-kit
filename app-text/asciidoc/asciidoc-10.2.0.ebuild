@@ -16,7 +16,6 @@ RDEPEND="
 	>=app-text/docbook-xsl-stylesheets-1.75
 	dev-libs/libxslt
 	dev-libs/libxml2:2"
-
 IUSE=""
 SLOT="0"
 LICENSE=""
