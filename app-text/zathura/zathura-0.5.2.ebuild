@@ -1,55 +1,55 @@
-# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit meson virtualx
+inherit meson virtualx xdg
 
 DESCRIPTION="A highly customizable and functional document viewer"
-HOMEPAGE="http://pwmt.org/projects/zathura/"
-
-if [[ ${PV} == *9999 ]]; then
-	inherit git-r3
-	EGIT_REPO_URI="https://git.pwmt.org/pwmt/${PN}.git"
-	EGIT_BRANCH="develop"
-else
-	SRC_URI="https://pwmt.org/projects/zathura/download/${P}.tar.xz"
-	KEYWORDS="amd64 arm x86 ~amd64-linux ~x86-linux"
-fi
+HOMEPAGE="https://pwmt.org/projects/zathura/"
+SRC_URI="https://pwmt.org/projects/zathura/download/zathura-0.5.2.tar.xz -> zathura-0.5.2.tar.xz
+https://cdn.turret.cyou/354c6d33bfd3bbc67c0047af1328498978eef352/zathura-0.5.2-manpages.tar.xz -> zathura-0.5.2-manpages.tar.xz"
 
 LICENSE="ZLIB"
 SLOT="0"
-IUSE="doc +magic seccomp sqlite synctex test"
+KEYWORDS="*"
+IUSE="seccomp sqlite synctex test"
 
 RESTRICT="!test? ( test )"
 
-DEPEND=">=dev-libs/girara-0.3.2
+DEPEND=">=dev-libs/girara-0.3.7
 	>=dev-libs/glib-2.50:2
 	>=sys-devel/gettext-0.19.8
-	x11-libs/cairo[X]
+	x11-libs/cairo
 	>=x11-libs/gtk+-3.22:3
-	magic? ( sys-apps/file )
+	sys-apps/file
 	seccomp? ( sys-libs/libseccomp )
 	sqlite? ( >=dev-db/sqlite-3.5.9:3 )
 	synctex? ( app-text/texlive-core )"
 
 RDEPEND="${DEPEND}"
 
-BDEPEND="doc? ( dev-python/sphinx )
+BDEPEND="
 	test? ( dev-libs/appstream-glib
 		dev-libs/check )
 	virtual/pkgconfig"
+PATCHES=(
+	"${FILESDIR}"/"${PN}-0.5.2-disable-seccomp-tests.patch"
+)
 
 src_configure() {
 	local emesonargs=(
 		-Dconvert-icon=disabled
-		-Dmagic=$(usex magic enabled disabled)
-		-Dmanpages=$(usex doc enabled disabled)
+		-Dmanpages=disabled
 		-Dseccomp=$(usex seccomp enabled disabled)
 		-Dsqlite=$(usex sqlite enabled disabled)
 		-Dsynctex=$(usex synctex enabled disabled)
 		)
 	meson_src_configure
+}
+
+src_install() {
+	meson_src_install
+	doman "${WORKDIR}"/man/zathura*
 }
 
 src_test() {
