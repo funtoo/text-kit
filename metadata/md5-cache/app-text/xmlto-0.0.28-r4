@@ -1,0 +1,13 @@
+DEFINED_PHASES=configure prepare
+DEPEND=>=app-text/docbook-xsl-stylesheets-1.62.0-r1 app-text/docbook-xml-dtd:4.2 app-shells/bash:0 dev-libs/libxslt sys-apps/sed >=sys-apps/coreutils-6.10-r1 || ( sys-apps/util-linux app-misc/getopt ) sys-apps/which text? ( || ( www-client/lynx www-client/elinks ) ) latex? ( dev-texlive/texlive-formatsextra )
+DESCRIPTION=script for converting XML and DocBook documents to a variety of output formats
+EAPI=5
+HOMEPAGE=https://pagure.io/xmlto
+IUSE=latex text
+KEYWORDS=*
+LICENSE=GPL-2
+RDEPEND=>=app-text/docbook-xsl-stylesheets-1.62.0-r1 app-text/docbook-xml-dtd:4.2 app-shells/bash:0 dev-libs/libxslt sys-apps/sed >=sys-apps/coreutils-6.10-r1 || ( sys-apps/util-linux app-misc/getopt ) sys-apps/which text? ( || ( www-client/lynx www-client/elinks ) ) latex? ( dev-texlive/texlive-formatsextra )
+SLOT=0
+SRC_URI=https://releases.pagure.org/xmlto/xmlto-0.0.28.tar.bz2
+_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	cb17fbe94a2c43cbc0f8e76abf15479a	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ltprune	22f9f14d105434e9c400ccac3bbb64ae	multilib	d410501a125f99ffb560b0c523cd3d1e	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
+_md5_=6dc87ddcde0e4d260b2a6e433b902108
