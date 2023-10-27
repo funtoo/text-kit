@@ -6,7 +6,7 @@ inherit cmake
 
 DESCRIPTION="Tail on steroids"
 HOMEPAGE="http://www.vanheusden.com/multitail/ https://github.com/folkertvanheusden/multitail/"
-SRC_URI="https://github.com/folkertvanheusden/multitail/tarball/116c2e31201eb43f19562d233a34664b88551ba6 -> multitail-7.0.0-116c2e3.tar.gz"
+SRC_URI="https://github.com/folkertvanheusden/multitail/tarball/b5898c4222e70a9eea0b27e143e343ff5f5b7d42 -> multitail-7.1.1-b5898c4.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
