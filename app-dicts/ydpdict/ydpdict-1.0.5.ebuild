@@ -5,7 +5,7 @@ inherit autotools
 
 DESCRIPTION="None"
 HOMEPAGE="https://github.com/wojtekka/ydpdict"
-SRC_URI="https://github.com/wojtekka/ydpdict/tarball/b8bedaa478f959bb7c41745c02dbbecfd25a084d -> ydpdict-1.0.4-b8bedaa.tar.gz"
+SRC_URI="https://github.com/wojtekka/ydpdict/tarball/5a161ec8eb8b95adf94cac9df799f0d220d17ea8 -> ydpdict-1.0.5-5a161ec.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

@@ -16,8 +16,8 @@ block-buffer-0.10.4
 bstr-1.8.0
 cc-1.0.83
 cfg-if-1.0.0
-clap-4.4.8
-clap_builder-4.4.8
+clap-4.4.10
+clap_builder-4.4.9
 clap_complete-4.4.4
 clap_derive-4.4.7
 clap_lex-0.6.0
@@ -102,7 +102,7 @@ inherit cargo
 
 DESCRIPTION="Small command-line JSON Log viewer"
 HOMEPAGE="https://github.com/brocode/fblog"
-SRC_URI="https://api.github.com/repos/brocode/fblog/tarball/v4.7.0 -> fblog-4.7.0.tar.gz
+SRC_URI="https://api.github.com/repos/brocode/fblog/tarball/v4.8.0 -> fblog-4.8.0.tar.gz
 	$(cargo_crate_uris ${CRATES})"
 
 LICENSE="Apache-2.0 Boost-1.0 BSD BSD-2 CC0-1.0 ISC LGPL-3+ MIT Apache-2.0 Unlicense WTFPL-2 ZLIB"
