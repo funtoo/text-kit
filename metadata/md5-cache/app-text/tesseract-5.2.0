@@ -1,4 +1,4 @@
-BDEPEND=>=app-portage/elt-patches-20170815 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.16.1:1.16 >=sys-devel/automake-1.15.1:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+BDEPEND=>=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.5:1.16 ) >=sys-devel/autoconf-2.71 >=sys-devel/libtool-2.4
 DEFINED_PHASES=configure install prepare pretend setup
 DEPEND=>=media-libs/leptonica-1.74:=[zlib,tiff?,jpeg?,png?,webp?] opencl? ( virtual/opencl media-libs/tiff:0= media-libs/leptonica:=[tiff] ) training? ( dev-libs/icu:= x11-libs/pango:= x11-libs/cairo:= ) app-text/asciidoc app-text/docbook-xsl-stylesheets dev-libs/libxslt doc? ( app-doc/doxygen )
 DESCRIPTION=An OCR Engine, originally developed at HP, now open source
@@ -10,5 +10,5 @@ LICENSE=Apache-2.0
 RDEPEND=>=media-libs/leptonica-1.74:=[zlib,tiff?,jpeg?,png?,webp?] opencl? ( virtual/opencl media-libs/tiff:0= media-libs/leptonica:=[tiff] ) training? ( dev-libs/icu:= x11-libs/pango:= x11-libs/cairo:= ) || ( >=app-text/tessdata_fast-4.0.0 >=app-text/tessdata_best-4.0.0 >=app-text/tessdata_legacy-4.0.0 )
 SLOT=0/5
 SRC_URI=https://github.com/tesseract-ocr/tesseract/archive/5.2.0.tar.gz -> tesseract-5.2.0.tar.gz
-_eclasses_=autotools	5223f703a2e9c194fcda924f8c4b6baf	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_eclasses_=autotools	e9ade2787b2f54643c7cdffbfa1cca9c	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
 _md5_=c93f39958cf005fb1bae3d91609f0f6d
