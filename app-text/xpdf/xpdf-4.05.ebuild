@@ -6,7 +6,7 @@ inherit cmake desktop xdg
 
 DESCRIPTION="The PDF viewer and tools"
 HOMEPAGE="https://www.xpdfreader.com"
-SRC_URI="https://dl.xpdfreader.com/xpdf-4.04.tar.gz -> xpdf-4.04.tar.gz
+SRC_URI="https://dl.xpdfreader.com/xpdf-4.05.tar.gz -> xpdf-4.05.tar.gz
 	i18n? (
 		https://dl.xpdfreader.com/xpdf-arabic.tar.gz
 		https://dl.xpdfreader.com/xpdf-chinese-simplified.tar.gz
