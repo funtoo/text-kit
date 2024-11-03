@@ -29,6 +29,12 @@ DEPEND="${COMMON_DEPEND}
 "
 BDEPEND="virtual/pkgconfig"
 
+post_src_unpack() {
+	if [ ! -d "${S}" ]; then
+		mv "${WORKDIR}"/* "${S}" || die
+	fi
+}
+
 src_configure() {
 	local myconf=(
 		--disable-static

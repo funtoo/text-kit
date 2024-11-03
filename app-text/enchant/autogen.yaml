@@ -5,7 +5,7 @@ enchant:
         github:
           user: AbiWord
           repo: enchant
-          query: releases
+          query: tags
           tarball: "enchant-{version}.tar.gz"
         revision:
           '2.3.3': 1
