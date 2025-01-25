@@ -6,7 +6,7 @@ inherit autotools
 
 DESCRIPTION="Library for handling paper characteristics"
 HOMEPAGE="http://packages.debian.org/unstable/source/libpaper"
-SRC_URI="https://github.com/rrthomas/libpaper/releases/download/v2.2.5/libpaper-2.2.5.tar.gz -> libpaper-2.2.5.tar.gz"
+SRC_URI="https://github.com/rrthomas/libpaper/releases/download/v2.2.6/libpaper-2.2.6.tar.gz -> libpaper-2.2.6.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
